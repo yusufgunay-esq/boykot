@@ -6,17 +6,9 @@ Ekranda bir dünya küresi var. Şirketin merkezi ve faaliyet gösterdiği yerle
 
 Site: https://yusufgunay-esq.github.io/boykot/
 
-## Şu an ne durumda
+Yayındaki sayfa şimdilik tasarım prototipi; içindeki şirket kayıtları örnek amaçlı.
 
-Sitenin tasarımı bitti, içi henüz dolmadı. Yayındaki sayfa tasarım prototipi; içindeki şirket kayıtları örnek amaçlı.
-
-Sırada şunlar var:
-
-- Kaynağı tek tek kontrol edilmiş 20-30 şirketlik gerçek liste
-- Altı saatte bir haber çeken ve ölü bağlantıları ayıklayan otomatik güncelleme
-- Türkçe, İngilizce, İspanyolca ve Çince
-
-## Kayıtlar nasıl girecek
+## Kayıtlar nasıl seçiliyor
 
 Bir şirketin listeye girmesi için açılabilen en az bir kaynak gerekiyor. Ana kaynak BDS hareketinin kendi yayımladığı listeler. Haberler için Reuters, AP, BBC, Al Jazeera ve Anadolu Ajansı'na bakılıyor.
 
@@ -39,9 +31,9 @@ Sonra tarayıcıda `http://localhost:8080` adresine gidin.
 ```
 index.html   site
 css/         renkler ve sayfa stili
-data/        metinler (şirket ve haber dosyaları buraya gelecek)
+data/        site metinleri
 tasarim/     tek dosyalık tasarım prototipi
-araclar/     ekran görüntüsü alma ve ileride güncelleme betikleri
+araclar/     yardımcı betikler
 ```
 
 ## Yanlış bir kayıt görürseniz
