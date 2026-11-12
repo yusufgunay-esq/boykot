@@ -1,68 +1,59 @@
-# BOYKOT · Küresel Gözlem
+# Boykot
 
-Bilinçli tüketim için açık kaynaklı boykot rehberi. Küre üzerindeki şirket dosyaları BDS boykot hedefi, baskı kampanyası, halk boykotu ya da sonuç alınmış durumunu gösterir; her kaydın yanında kaynağı vardır.
+Hangi şirket neden boykot ediliyor, bunu kim söylüyor ve en son ne oldu? Bu site bu üç soruya kaynağıyla cevap vermek için yapılıyor.
 
-**Site:** https://yusufgunay-esq.github.io/boykot/
+Ekranda bir dünya küresi var. Şirketin merkezi ve faaliyet gösterdiği yerler küre üzerinde işaretli. Bir şirkete tıklayınca boykotun gerekçesini, olayların tarih sırasını, hangi markaların o şirkete ait olduğunu ve bilginin nereden geldiğini görüyorsunuz.
 
-## Nedir
+Site: https://yusufgunay-esq.github.io/boykot/
 
-- Statik site: derleme yok, sunucu yok, çerez yok, izleme yok. GitHub Pages'te yayınlanır.
-- Tek sayfa: tam ekran küre, şirket dosyaları, olay çizelgesi, durum filtresi, arama ve zaman penceresi.
-- Askeri istihbarat brifingi dilinde bir "brifing" modu. Ses varsayılan açık; tarayıcı kuralı gereği ilk dokunuşta başlar.
-- Dört dil: Türkçe, İngilizce, İspanyolca, Çince. Asıl metin Türkçe.
-- Yalnız koyu tema.
+## Şu an ne durumda
 
-## Veri
+Sitenin tasarımı bitti, içi henüz dolmadı. Yayındaki sayfa tasarım prototipi; içindeki şirket kayıtları örnek amaçlı.
 
-- 20-30 şirket. Her kayıtta durum, neden, tarihçe, markalar, bağlantılı faaliyet yerleri ve kaynaklar bulunur.
-- Birincil kaynak BDS hareketinin yayımladığı listelerdir; ikincil kaynak Reuters, AP, BBC, Al Jazeera ve Anadolu Ajansı.
-- Her kayıtta en az bir açılmış https kaynak vardır. Açılamayan kaynak ve doğrulanamayan şirket siteye girmez.
-- Neden metinleri kaynağın söylediğini aşmaz; "BDS'ye göre ..." gibi tarafsız dille yazılır.
-- Liste değişiklikleri insan onayıyla yapılır. `araclar/liste-denetle.mjs` fark görürse issue açar, dosyayı kendisi değiştirmez.
+Sırada şunlar var:
 
-## Güncellik
+- Kaynağı tek tek kontrol edilmiş 20-30 şirketlik gerçek liste
+- Altı saatte bir haber çeken ve ölü bağlantıları ayıklayan otomatik güncelleme
+- Türkçe, İngilizce, İspanyolca ve Çince
 
-- `araclar/haber-cek.mjs` açık kaynaklardan (GDELT, yayıncı RSS'leri) son haberleri çeker; tekrarları ayıklar ve en çok 40 kaydı `data/haberler.json` dosyasına yazar.
-- GitHub Actions altı saatte bir çalışır; değişiklik varsa açıklayıcı bir commit atar.
-- `araclar/kaynak-denetle.mjs` sitedeki tüm bağlantıları doğrular; ölü kaynak yayına girmez.
+## Kayıtlar nasıl girecek
 
-## Yerelde çalıştırma
+Bir şirketin listeye girmesi için açılabilen en az bir kaynak gerekiyor. Ana kaynak BDS hareketinin kendi yayımladığı listeler. Haberler için Reuters, AP, BBC, Al Jazeera ve Anadolu Ajansı'na bakılıyor.
 
-Derleme adımı yok. Tarayıcı `fetch` kullandığı için basit bir sunucu gerekir:
+Gerekçe yazılırken kaynağın söylediğinin ötesine geçilmiyor. "Şu şirket şunu yaptı" yerine "BDS'ye göre şu şirket şunu yaptı" gibi yazılıyor. Kaynağı açılmayan ya da doğrulanamayan kayıt siteye konmuyor.
 
-```
-python -m http.server 8080        # ya da: npx serve .
+Listeyi otomatik araçlar değiştirmiyor. Bir araç fark görürse issue açıyor, kararı bir insan veriyor.
+
+## Bilgisayarda açmak
+
+Derleme yok. Tarayıcı veri dosyalarını `fetch` ile okuduğu için dosyayı çift tıklayarak açmak yetmiyor, küçük bir sunucu gerekiyor:
+
+```bash
+python -m http.server 8080
 ```
 
-Testler yalnız geliştirme içindir: `npm test`
+Sonra tarayıcıda `http://localhost:8080` adresine gidin.
 
-## Yapı
+## Klasörler
 
 ```
-index.html          tek sayfa
-css/                tokens.css, site.css
-js/                 ES modülleri (küre, paneller, i18n, brifing, ses)
-data/               sirketler.json, haberler.json, metinler.json
-araclar/            haber-cek.mjs, liste-denetle.mjs, kaynak-denetle.mjs
-.github/workflows/  guncelle.yml, pages.yml
-tasarim/            tek dosya tasarım prototipi (yayına girmez)
-yasal.html          bilgilendirme ve sorumluluk reddi
+index.html   site
+css/         renkler ve sayfa stili
+data/        metinler (şirket ve haber dosyaları buraya gelecek)
+tasarim/     tek dosyalık tasarım prototipi
+araclar/     ekran görüntüsü alma ve ileride güncelleme betikleri
 ```
 
-## İlkeler
+## Yanlış bir kayıt görürseniz
 
-- Tarafsız dil, doğrulanmış kaynak, insan onaylı liste.
-- Renk yalnız veri durumunda; dekoratif renk, reklam ve izleme yok.
-- Klavye kısayolları, görünür odak halkası ve azaltılmış hareket desteği.
+Issue açın, mümkünse kaynağını da ekleyin. Hatalı bilgi en kısa sürede düzeltilir ya da kaldırılır.
 
-## Yasal
+## Not
 
-Bilgilendirme amaçlıdır. Kaynaklar üçüncü taraflara aittir; hukuki sorumluluk kabul edilmez. Hatalı kayıt için GitHub issue açın. Resmî BDS hareketiyle bağlantılı değildir.
+Site bilgi vermek için var. Alıntılanan haber ve listeler sahiplerine ait. Bu proje BDS hareketinin resmî bir parçası değil ve onunla bir bağı yok.
 
 ## Lisans
 
-Tüm hakları saklıdır; ayrıntılar [LICENSE](LICENSE) dosyasında. İzinle kullanımda "Yusuf Günay" adının görünür yerde anılması gerekir.
+Tüm hakları saklıdır, ayrıntı [LICENSE](LICENSE) dosyasında. İzin alınarak kullanıldığında "Yusuf Günay" adının görünür bir yerde yazılması gerekiyor.
 
-## Künye
-
-Yusuf GÜNAY · https://github.com/yusufgunay-esq
+Yusuf Günay · https://github.com/yusufgunay-esq
