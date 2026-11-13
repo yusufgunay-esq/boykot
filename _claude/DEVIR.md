@@ -3,8 +3,8 @@
 ## 2026-11-13 · İŞ 001 site inşası (is001-site dalı)
 Yapıldı: kök index.html v0.6 prototipinin modüler hali; 243 gerçek kaynaklı kayıt (BDS/UN OHCHR/ülke listeleri), 4 dil, animasyonlu açılış, künye; kaynak hattı + 6 saatlik güncelleme ve Pages workflow'ları; yasal.html.
 Doğrulama: npm test 75/75; konsol 0, yatay taşma 0; ui_lint ERR0 WARN0; yan yana t4 kanıt görüntüleri.
-Sıradaki: main'e birleştirme ve Pages yayını (Yusuf onayı).
-Açık: bağımsız denetim bellek kesintisi nedeniyle koşulamadı; kaynak-denetle 14/14 canlı.
+Sıradaki: yayın tamam; 6 saatlik veri güncellemesinin ilk koşusunu izle.
+Açık: bağımsız denetim bellek kesintisi nedeniyle koşulamadı; kaynak-denetle 14/14 canlı; haber akışı ilk turda boş.
 Commit: e593ece (is001-site dalı).
 
 ## 2026-11-12 · İŞ 002 tasarım v0.6
