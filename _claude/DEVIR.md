@@ -1,5 +1,11 @@
 # Devir Notları
 
+## 2026-11-13 · İŞ 001 yayın
+Yapıldı: is001-site main'e fast-forward birleşti; GitHub Pages kaynağı Actions'a çevrildi; pages.yml yayını başarılı.
+Doğrulama: canlı kök 200, başlık Boykot · Küresel gözlem, js/ana.js 200, data 243 kayıt, yasal.html 200; npm test 75/75.
+Sıradaki: guncelle.yml ilk koşusu (haber akışı) ve sonucun kontrolü.
+Commit: a3c25d3 (main birleşme) + a990e64 (yayın notu).
+
 ## 2026-11-13 · İŞ 001 site inşası (is001-site dalı)
 Yapıldı: kök index.html v0.6 prototipinin modüler hali; 243 gerçek kaynaklı kayıt (BDS/UN OHCHR/ülke listeleri), 4 dil, animasyonlu açılış, künye; kaynak hattı + 6 saatlik güncelleme ve Pages workflow'ları; yasal.html.
 Doğrulama: npm test 75/75; konsol 0, yatay taşma 0; ui_lint ERR0 WARN0; yan yana t4 kanıt görüntüleri.
