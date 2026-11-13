@@ -2,11 +2,130 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Boykot · Küresel gözlem</title>
-<meta http-equiv="refresh" content="0; url=tasarim/">
-<link rel="canonical" href="tasarim/">
-<style>body{margin:0;background:#07090c;color:#a2abb8;font:14px/1.5 system-ui,sans-serif;display:grid;place-items:center;height:100vh}a{color:#e3e7ec}</style>
+<meta name="description" content="Bilinçli tüketim için açık kaynaklı boykot rehberi: küre üzerinde şirket dosyaları, doğrulanmış kaynaklar ve altı saatte bir güncellenen haber akışı.">
+<link rel="canonical" href="https://yusufgunay-esq.github.io/boykot/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
 </head>
-<body><a href="tasarim/">Boykot gözlem konsoluna git</a></body>
+<body>
+
+
+<header class="ust">
+  <div class="logo"><span class="isaret" aria-hidden="true"></span><b>BOYKOT</b><span class="e" data-t="altBaslik"></span><span class="e surum">v0.6</span></div>
+  <label class="komut"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="ara" type="search" data-t-placeholder="ara" data-t-aria-label="ara" autocomplete="off"><span class="tus">/</span></label>
+  <div class="sekmeler" role="tablist">
+    <button class="sekme" role="tab" aria-selected="true" data-gorunum="kure" data-t="kure"></button>
+    <button class="sekme" role="tab" aria-selected="false" data-gorunum="ag" data-t="ag"></button>
+    <button class="sekme" id="brifingAc" data-t="brifing"></button>
+  </div>
+  <div class="durum-blok"><span class="canli" data-t="cevrimici"></span><span id="saat">--:--:-- UTC</span></div>
+  <div class="diller" role="group" aria-label="Dil / Language">
+    <button class="dil" data-dil="tr" lang="tr">TR</button><button class="dil" data-dil="en" lang="en">EN</button><button class="dil" data-dil="es" lang="es">ES</button><button class="dil" data-dil="zh" lang="zh">中文</button>
+  </div>
+  <div class="ikonlar">
+    <button class="ik" id="sesDugme" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="dalga" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" style="display:none"/><path class="sessiz" d="m17 9 5 6M22 9l-5 6"/></svg></button>
+    <button class="ik" id="barkodAc" data-t-title="barkod" data-t-aria-label="barkod"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7V5h3M17 5h3v2M4 17v2h3M17 19h3v-2M8 9v6M11 9v6M14 9v6M17 9v6"/></svg></button>
+    <button class="ik" id="yontemAc" data-t-title="yontem" data-t-aria-label="yontem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg></button>
+  </div>
+</header>
+
+<aside class="sol">
+  <div class="blok">
+    <div class="blok-bas"><span class="bas" data-t="durumFiltre"></span><button class="bag-dugme" id="filtreSifirla" data-t="sifirla"></button></div>
+    <div class="durumlar" id="durumlar"></div>
+    <div class="ciplar" id="kategoriler" style="margin-top:10px"></div>
+  </div>
+  <div class="blok">
+    <div class="blok-bas"><span class="bas" data-t="varliklar"></span><span class="say" id="sayiGor"></span></div>
+    <ul class="liste" id="liste" role="listbox" data-t-aria-label="varliklar"></ul>
+  </div>
+</aside>
+
+<main id="sahne">
+  <div id="kure" aria-hidden="true"></div>
+  <div id="ag"></div>
+  <div class="tarama" aria-hidden="true"></div>
+  <div class="vinyet" aria-hidden="true"></div>
+  <svg id="onder" aria-hidden="true"></svg>
+  <details class="katmanlar"><summary><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg><span data-t="katmanlar"></span><span class="m" id="katSay"></span></summary><div id="katmanlar" role="group"></div></details>
+  <span class="kose a"></span><span class="kose b"></span><span class="kose c"></span><span class="kose d"></span>
+  <div class="koor koor-l" id="koorL" aria-hidden="true"></div>
+  <div class="koor koor-r" id="koorR" aria-hidden="true"></div>
+  <div class="hud k-sol-ust"><b id="gorunumAd"></b><br><span id="hudSay"></span></div>
+  <div class="hud k-sag-ust" id="koordinat"></div>
+  <div class="hud k-sol-alt" id="hudSol" data-t="yardim"></div>
+  <div class="hud k-sag-alt"><div class="olcek"><span id="olcekYazi"></span><i></i></div></div>
+  <div class="nisan" id="nisan"><i></i><div class="nisan-etiket" id="nisanEtiket"></div></div>
+</main>
+<div id="intel"></div>
+<div class="dip"><span class="dip-sol"><span data-t="sorumluluk"></span><a href="yasal.html" id="yasalAc" data-t="yasal"></a></span><span class="kunye" data-t="kunye"></span></div>
+
+<aside class="sag" id="panel" aria-live="polite"></aside>
+
+<section class="alt">
+  <div class="zc">
+    <div class="blok-bas"><span class="bas"><span data-t="zamanCizelgesi"></span> <span class="m" style="color:var(--sonuk);font-weight:400;font-size:11px">2016–2026</span></span><span style="display:flex;gap:8px;align-items:center"><span class="pencere" id="pencere" role="group"><button data-y="2016" aria-pressed="true" data-t="tumu"></button><button data-y="2022" aria-pressed="false">5Y</button><button data-y="2024" aria-pressed="false">3Y</button><button data-y="2026" aria-pressed="false">1Y</button></span><span class="say" id="zcSay"></span></span></div>
+    <svg id="zc" role="img"></svg>
+  </div>
+  <div class="gunluk">
+    <div class="blok-bas"><span class="bas" data-t="olayGunlugu"></span><span class="e canli" data-t="canli"></span></div>
+    <ol id="gunluk"></ol>
+  </div>
+</section>
+
+<div class="ipucu" id="ipucu"></div>
+<div class="serit u" aria-hidden="true"></div><div class="serit a" aria-hidden="true"></div>
+<div class="br-ust" id="brUst"></div>
+<div class="altyazi" aria-live="polite"><div class="kim" id="brKim"></div><p id="brMetin"></p></div>
+<div class="br-kontrol"><button id="brGeri" data-t-aria-label="brGeri"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M8 2 4 6l4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><button id="brDur" data-t-aria-label="brDur"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 2v8M8.5 2v8" stroke="currentColor" stroke-width="1.6"/></svg></button><button id="brIleri" data-t-aria-label="brIleri"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="m4 2 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><button id="brCik" data-t="cik"></button></div>
+<div class="giris" id="giris" aria-hidden="true">
+  <div class="g-serit"><span data-t="osint"></span><span id="gDosya"></span></div>
+  <div class="g-govde">
+    <div class="g-ust" data-t="gUst"></div>
+    <div class="g-etiket" data-t="gorevDosyasi"></div>
+    <h2 class="g-baslik" id="gBaslik">BOYKOT</h2>
+    <div class="g-meta"><span id="gTarih"></span><span id="gDamga"></span></div>
+    <div class="g-redaksiyon" aria-hidden="true"><span style="width:34%"></span><span style="width:18%"></span><span style="width:26%"></span></div>
+    <button class="g-dugme" id="gBasla" data-t="girisDugme"></button>
+    <button class="g-atla" id="gAtla" data-t="atla"></button>
+    <div class="g-satirlar" id="gSatirlar"><div class="satir" id="g1"></div><div class="satir" id="g2"></div><div class="satir" id="g3"></div></div>
+  </div>
+</div>
+<div class="giris acilis" id="acilis" aria-hidden="true">
+  <div class="g-serit"><span data-t="osint"></span><span id="aDosya"></span></div>
+  <div class="g-govde">
+    <div class="g-ust" data-t="gUst"></div>
+    <div class="g-etiket" data-t="gorevDosyasi"></div>
+    <div class="g-meta"><span id="aTarih"></span><span id="aDamga"></span></div>
+    <div class="g-satirlar" id="aSatirlar"><div class="satir" id="a1"></div><div class="satir" id="a2"></div><div class="satir k" id="a3"></div></div>
+    <button class="g-dugme" id="aBasla" data-t="girisDugme"></button>
+    <button class="g-atla" id="aAtla" data-t="atla"></button>
+  </div>
+</div>
+
+<div class="modal" id="barkodModal" role="dialog" aria-modal="true" aria-labelledby="bkB">
+  <div class="modal-ic">
+    <div class="blok-bas"><span class="e" id="bkB" data-t="barkod"></span><button class="kapat" data-kapat aria-label="×">×</button></div>
+    <div class="ic">
+      <p data-t="barkodAciklama"></p>
+      <div class="barkod-satir"><input id="barkod" inputmode="numeric" maxlength="13" placeholder="7290000000000" data-t-aria-label="barkod"><button class="dugme" id="barkodSor" data-t="sorgula"></button></div>
+      <div class="sonuc" id="barkodSonuc"></div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="yontemModal" role="dialog" aria-modal="true" aria-labelledby="ymB">
+  <div class="modal-ic">
+    <div class="blok-bas"><span class="e" id="ymB" data-t="yontem"></span><button class="kapat" data-kapat aria-label="×">×</button></div>
+    <div class="ic"><p data-t="yontem1"></p><p data-t="yontem2"></p><p data-t="yontem3"></p><p class="kunye-satir" data-t="kunye"></p></div>
+  </div>
+</div>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module" src="js/ana.js"></script>
+</body>
 </html>

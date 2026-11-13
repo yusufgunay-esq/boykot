@@ -19,6 +19,7 @@ D:\Projelerim\boykot deposunda statik, derlemesiz, GitHub Pages'te yayınlanan b
 
 ## Veri (hukuki risk; uydurma yasak)
 - Şema prototipteki `SIRKETLER` ile aynı (id, ad, ulke, sehir, lat, lng, kategori, durum: bds|baski|halk|sonuc, markalar, neden[4 dil], zaman[[tarih,[4 dil]]], bag[{lat,lng,e[4 dil]}], kaynak[[baslik[4 dil],url,yil]]).
+- Kapsam güncellemesi (2026-11-13, Yusuf): 20-30 sınırı kalktı — BDS hareketinin boykot listesinin TAMAMI veriye girer (bdsmovement.net boykot/hedef sayfalarındaki tüm şirket ve kurumlar; doğrulanamayan hariç, her biri en az 1 açılmış https kaynak). Künye değişmez. Açılış ekranı animasyonlu: boot satırları + kısa glitch + tarama/radar, ENTER ile yumuşak açılış, ≤2,5 sn, reduced-motion statik.
 - 20-30 şirket. Birincil kaynak bdsmovement.net boykot sayfaları; ikincil Reuters, AP, BBC, Al Jazeera, Anadolu Ajansı. Her kayıtta EN AZ 1 gerçekten açtığın https kaynak; açamadığını yazma, doğrulayamadığın şirketi koyma. Neden metni kaynağın söylediğini aşmaz, tarafsız dil ("BDS'ye göre ..."). Faaliyeti sona erenler `sonuc`.
 - Çeviriler: tr asıl metin; en/es/zh çevirisi senin; özel adlar çevrilmez.
 
@@ -39,7 +40,7 @@ Ortak HTTP katmanı `araclar/http.mjs`: 15 sn zaman aşımı, 2 deneme + üstel 
 
 ## Test ve kanıt
 - `package.json` yalnız geliştirme: `npm test` → `node --test test/`. Testler: şema (zorunlu alanlar, 4 dil dolu, https kaynak, lat/lng aralığı, durum enum, benzersiz id, haberlerdeki şirket id'si mevcut), EAN-13 ve 729 ön eki, filtre/arama, haber ayrıştırıcı (örnek RSS fikstürüyle, ağsız), URL kanonikleştirme, tekrar + relevans eşleşmesi (Türkçe aksan katlama dahil), atomik yazma, kaynak-denetle rapor ayrıştırıcısı.
-- Playwright ile `_claude/kanit/`: prototip ve site yan yana, 1440x900 koyu genel + seçili + brifing, 390x844. Konsol hatası 0, yatay taşma 0. `gunay-studio` `ui_lint.py` temiz.
+- Playwright ile `_claude/kanit/`: prototip ve site yan yana, 1440x900 koyu genel + seçili + brifing, 390x844, ayrıca açılış animasyonundan 2 kare. Konsol hatası 0, yatay taşma 0. `gunay-studio` `ui_lint.py` temiz.
 
 ## Yasaklar
 Commit/push yok (orkestratör yapar). LICENSE'a dokunma. Secret yok. Arayüzde ve belgelerde başka ürün/marka adı tasarım ölçüsü olarak geçmez. Kapsam dışı dosya yok.

@@ -1,0 +1,905 @@
+{
+ "surum": 2,
+ "diller": [
+  "tr",
+  "en",
+  "es",
+  "zh"
+ ],
+ "metinler": {
+  "altBaslik": [
+   "Küresel gözlem",
+   "Global watch",
+   "Observación global",
+   "全球观察"
+  ],
+  "ara": [
+   "Varlık, marka ya da ülke ara",
+   "Search entity, brand or country",
+   "Buscar entidad, marca o país",
+   "搜索实体、品牌或国家"
+  ],
+  "kure": [
+   "KÜRE",
+   "GLOBE",
+   "GLOBO",
+   "地球"
+  ],
+  "ag": [
+   "AĞ",
+   "NETWORK",
+   "RED",
+   "网络"
+  ],
+  "brifing": [
+   "▶ BRİFİNG",
+   "▶ BRIEFING",
+   "▶ INFORME",
+   "▶ 简报"
+  ],
+  "cevrimici": [
+   "AKIŞ ÇEVRİMİÇİ",
+   "FEED ONLINE",
+   "FUENTE EN LÍNEA",
+   "数据流在线"
+  ],
+  "barkod": [
+   "Barkod sorgusu",
+   "Barcode lookup",
+   "Consulta de código de barras",
+   "条形码查询"
+  ],
+  "yontem": [
+   "Yöntem",
+   "Method",
+   "Metodología",
+   "方法说明"
+  ],
+  "osint": [
+   "AÇIK KAYNAK · OSINT",
+   "OPEN SOURCE · OSINT",
+   "FUENTE ABIERTA · OSINT",
+   "公开来源 · OSINT"
+  ],
+  "gorevDosyasi": [
+   "GÖREV DOSYASI",
+   "MISSION FILE",
+   "EXPEDIENTE DE MISIÓN",
+   "任务档案"
+  ],
+  "girisDugme": [
+   "GİRİŞ · ENTER",
+   "ENTER",
+   "ENTRAR",
+   "进入"
+  ],
+  "atla": [
+   "Atla",
+   "Skip",
+   "Omitir",
+   "跳过"
+  ],
+  "gUst": [
+   "BOYKOT · KÜRESEL GÖZLEM",
+   "BOYKOT · GLOBAL WATCH",
+   "BOYKOT · OBSERVACIÓN GLOBAL",
+   "BOYKOT · 全球观察"
+  ],
+  "kunye": [
+   "KÜNYE · YUSUF GÜNAY",
+   "CREDITS · YUSUF GÜNAY",
+   "CRÉDITOS · YUSUF GÜNAY",
+   "署名 · YUSUF GÜNAY"
+  ],
+  "kase": [
+   "KAYNAK DOĞRULANDI",
+   "SOURCE VERIFIED",
+   "FUENTE VERIFICADA",
+   "来源已核实"
+  ],
+  "hedef": [
+   "HEDEF",
+   "TARGET",
+   "OBJETIVO",
+   "目标"
+  ],
+  "a1": [
+   "SİNYAL KAYNAĞI · AÇIK KAYNAK",
+   "SIGNAL SOURCE · OPEN SOURCE",
+   "FUENTE DE SEÑAL · FUENTE ABIERTA",
+   "信号来源 · 公开来源"
+  ],
+  "a2": [
+   "VARLIK {n} · ÜLKE {u} · BAĞLANTI {b}",
+   "ENTITIES {n} · COUNTRIES {u} · LINKS {b}",
+   "ENTIDADES {n} · PAÍSES {u} · VÍNCULOS {b}",
+   "实体 {n} · 国家 {u} · 关联 {b}"
+  ],
+  "a3": [
+   "GÖZLEM AKTİF · HER İDDİA KAYNAĞIYLA",
+   "WATCH ACTIVE · EVERY CLAIM WITH ITS SOURCE",
+   "OBSERVACIÓN ACTIVA · CADA AFIRMACIÓN CON SU FUENTE",
+   "观测进行中 · 每项指控均附来源"
+  ],
+  "sesAc": [
+   "Sesi aç",
+   "Turn sound on",
+   "Activar sonido",
+   "开启声音"
+  ],
+  "sesKapat": [
+   "Sesi kapat",
+   "Turn sound off",
+   "Desactivar sonido",
+   "关闭声音"
+  ],
+  "katmanlar": [
+   "Katmanlar",
+   "Layers",
+   "Capas",
+   "图层"
+  ],
+  "durumFiltre": [
+   "Durum filtresi",
+   "Status filter",
+   "Filtro de estado",
+   "状态筛选"
+  ],
+  "sifirla": [
+   "Sıfırla",
+   "Reset",
+   "Restablecer",
+   "重置"
+  ],
+  "varliklar": [
+   "Varlıklar",
+   "Entities",
+   "Entidades",
+   "实体"
+  ],
+  "kod": [
+   "KOD",
+   "CODE",
+   "CÓDIGO",
+   "代码"
+  ],
+  "varlik": [
+   "VARLIK",
+   "ENTITY",
+   "ENTIDAD",
+   "实体"
+  ],
+  "kyn": [
+   "KYN",
+   "SRC",
+   "FTE",
+   "来源"
+  ],
+  "k_merkez": [
+   "Genel merkezler",
+   "Headquarters",
+   "Sedes",
+   "总部"
+  ],
+  "k_yay": [
+   "Faaliyet bağlantıları",
+   "Activity links",
+   "Vínculos de actividad",
+   "活动关联"
+  ],
+  "k_sinir": [
+   "Ülke sınırları",
+   "Country borders",
+   "Fronteras",
+   "国界"
+  ],
+  "k_kara": [
+   "Kara noktaları",
+   "Land points",
+   "Puntos de tierra",
+   "陆地点阵"
+  ],
+  "k_izgara": [
+   "Enlem / boylam",
+   "Lat / long grid",
+   "Latitud / longitud",
+   "经纬网"
+  ],
+  "gorunumKure": [
+   "GÖRÜNÜM · KÜRE / ORTOGRAFİK",
+   "VIEW · GLOBE / ORTHOGRAPHIC",
+   "VISTA · GLOBO / ORTOGRÁFICA",
+   "视图 · 地球 / 正射"
+  ],
+  "gorunumAg": [
+   "GÖRÜNÜM · AĞ / KATEGORİ–VARLIK",
+   "VIEW · NETWORK / CATEGORY–ENTITY",
+   "VISTA · RED / CATEGORÍA–ENTIDAD",
+   "视图 · 网络 / 类别–实体"
+  ],
+  "hudSay": [
+   "KATMAN {k}/5 · VARLIK {v}",
+   "LAYERS {k}/5 · ENTITIES {v}",
+   "CAPAS {k}/5 · ENTIDADES {v}",
+   "图层 {k}/5 · 实体 {v}"
+  ],
+  "yardim": [
+   "SÜRÜKLE: DÖNDÜR · TEKER: YAKINLAŞ · /: ARA · ESC: BIRAK",
+   "DRAG: ROTATE · WHEEL: ZOOM · /: SEARCH · ESC: RELEASE",
+   "ARRASTRAR: GIRAR · RUEDA: ZOOM · /: BUSCAR · ESC: SOLTAR",
+   "拖动：旋转 · 滚轮：缩放 · /：搜索 · ESC：取消"
+  ],
+  "merkez": [
+   "MERKEZ",
+   "CENTER",
+   "CENTRO",
+   "中心"
+  ],
+  "irtifa": [
+   "İRTİFA",
+   "ALTITUDE",
+   "ALTITUD",
+   "高度"
+  ],
+  "gorus": [
+   "GÖRÜŞ",
+   "VIEW",
+   "VISIÓN",
+   "视野"
+  ],
+  "yonler": [
+   "KGDB",
+   "NSEW",
+   "NSEO",
+   "北南东西"
+  ],
+  "sorumluluk": [
+   "Bilgilendirme amaçlıdır. Kaynaklar üçüncü taraflara aittir; sorumluluk kabul edilmez.",
+   "For information only. Sources belong to third parties; no liability is accepted.",
+   "Solo con fines informativos. Las fuentes pertenecen a terceros; no se acepta responsabilidad.",
+   "仅供参考。来源归第三方所有；本站不承担任何责任。"
+  ],
+  "yasal": [
+   "Yasal uyarı",
+   "Legal notice",
+   "Aviso legal",
+   "法律声明"
+  ],
+  "zamanCizelgesi": [
+   "Zaman çizelgesi",
+   "Timeline",
+   "Cronología",
+   "时间线"
+  ],
+  "olay": [
+   "olay",
+   "events",
+   "eventos",
+   "个事件"
+  ],
+  "olayGunlugu": [
+   "Olay günlüğü",
+   "Event log",
+   "Registro de eventos",
+   "事件日志"
+  ],
+  "canli": [
+   "Canlı",
+   "Live",
+   "En vivo",
+   "实时"
+  ],
+  "haber": [
+   "HABER",
+   "NEWS",
+   "NOTICIA",
+   "新闻"
+  ],
+  "kayit": [
+   "KAYIT",
+   "RECORD",
+   "REGISTRO",
+   "记录"
+  ],
+  "simdi": [
+   "ŞİMDİ",
+   "NOW",
+   "AHORA",
+   "现在"
+  ],
+  "brGeri": [
+   "Önceki adım",
+   "Previous step",
+   "Paso anterior",
+   "上一步"
+  ],
+  "brIleri": [
+   "Sonraki adım",
+   "Next step",
+   "Paso siguiente",
+   "下一步"
+  ],
+  "brDur": [
+   "Duraklat",
+   "Pause",
+   "Pausar",
+   "暂停"
+  ],
+  "brOyna": [
+   "Sürdür",
+   "Resume",
+   "Reanudar",
+   "继续"
+  ],
+  "haritaYuk": [
+   "HARİTA KATMANI YÜKLENİYOR",
+   "LOADING MAP LAYER",
+   "CARGANDO MAPA",
+   "正在加载地图"
+  ],
+  "tumu": [
+   "TÜMÜ",
+   "ALL",
+   "TODO",
+   "全部"
+  ],
+  "tarih": [
+   "Tarih",
+   "Date",
+   "Fecha",
+   "日期"
+  ],
+  "dosyaAc": [
+   "Dosyayı aç",
+   "Open file",
+   "Abrir expediente",
+   "打开档案"
+  ],
+  "kaynagaGit": [
+   "Kaynağa git",
+   "Go to source",
+   "Ir a la fuente",
+   "查看来源"
+  ],
+  "kapat": [
+   "Kapat",
+   "Close",
+   "Cerrar",
+   "关闭"
+  ],
+  "sonIstihbarat": [
+   "Son istihbarat",
+   "Latest intel",
+   "Inteligencia reciente",
+   "最新情报"
+  ],
+  "etkinlik": [
+   "Etkinlik yoğunluğu",
+   "Activity density",
+   "Densidad de actividad",
+   "活动密度"
+  ],
+  "etki": [
+   "Etki",
+   "Impact",
+   "Impacto",
+   "影响"
+  ],
+  "ceyrek": [
+   "Ç",
+   "Q",
+   "T",
+   "Q"
+  ],
+  "sonucCumle": [
+   "{t} kampanyadan {n} tanesi sonuç aldı.",
+   "{n} of {t} campaigns achieved results.",
+   "{n} de {t} campañas lograron resultados.",
+   "{t} 项运动中有 {n} 项取得成效。"
+  ],
+  "acikKaynak": [
+   "AÇIK KAYNAK",
+   "OPEN SOURCE",
+   "FUENTE ABIERTA",
+   "公开来源"
+  ],
+  "cik": [
+   "ÇIK · ESC",
+   "EXIT · ESC",
+   "SALIR · ESC",
+   "退出 · ESC"
+  ],
+  "bos": [
+   "Bu filtreyle eşleşen varlık yok. Filtreyi sıfırla ya da başka bir ad dene.",
+   "No entity matches this filter. Reset the filter or try another name.",
+   "Ninguna entidad coincide con este filtro. Restablece el filtro o prueba otro nombre.",
+   "没有符合此筛选条件的实体。请重置筛选或尝试其他名称。"
+  ],
+  "genelDurum": [
+   "Genel durum",
+   "Overview",
+   "Panorama",
+   "总体情况"
+  ],
+  "kureselOzet": [
+   "Küresel özet",
+   "Global summary",
+   "Resumen global",
+   "全球概览"
+  ],
+  "marka": [
+   "Marka",
+   "Brand",
+   "Marca",
+   "品牌"
+  ],
+  "kaynak": [
+   "Kaynak",
+   "Source",
+   "Fuente",
+   "来源"
+  ],
+  "durumDagilimi": [
+   "Durum dağılımı",
+   "Status breakdown",
+   "Distribución por estado",
+   "状态分布"
+  ],
+  "kategori": [
+   "Kategori",
+   "Category",
+   "Categoría",
+   "类别"
+  ],
+  "merkezUlke": [
+   "Merkez ülke",
+   "HQ country",
+   "País de la sede",
+   "总部所在国"
+  ],
+  "genelIpucu": [
+   "Bir varlık seçmek için kürede bir işarete, tabloda bir satıra ya da günlükte bir olaya tıkla.",
+   "To select an entity, click a marker on the globe, a row in the table or an event in the log.",
+   "Para seleccionar una entidad, haz clic en un marcador del globo, una fila de la tabla o un evento del registro.",
+   "点击地球上的标记、表格中的一行或日志中的事件即可选择实体。"
+  ],
+  "dosya": [
+   "Varlık dosyası",
+   "Entity file",
+   "Expediente",
+   "实体档案"
+  ],
+  "merkezEt": [
+   "Merkez",
+   "HQ",
+   "Sede",
+   "总部"
+  ],
+  "sektor": [
+   "Sektör",
+   "Sector",
+   "Sector",
+   "行业"
+  ],
+  "konum": [
+   "Konum",
+   "Position",
+   "Posición",
+   "坐标"
+  ],
+  "gerekce": [
+   "Gerekçe",
+   "Grounds",
+   "Motivo",
+   "缘由"
+  ],
+  "kaynagaGore": [
+   "Kaynağa göre",
+   "Per source",
+   "Según la fuente",
+   "据来源"
+  ],
+  "grafik": [
+   "Bağlantı grafiği",
+   "Link graph",
+   "Grafo de vínculos",
+   "关联图"
+  ],
+  "dugum": [
+   "düğüm",
+   "nodes",
+   "nodos",
+   "个节点"
+  ],
+  "faaliyetYerleri": [
+   "Faaliyet yerleri",
+   "Activity sites",
+   "Lugares de actividad",
+   "活动地点"
+  ],
+  "mesafe": [
+   "Mesafe",
+   "Distance",
+   "Distancia",
+   "距离"
+  ],
+  "kanit": [
+   "Kanıt yoğunluğu",
+   "Evidence density",
+   "Densidad de evidencia",
+   "证据密度"
+  ],
+  "adet": [
+   "Adet",
+   "Count",
+   "Cantidad",
+   "数量"
+  ],
+  "olaySay": [
+   "Olay",
+   "Event",
+   "Evento",
+   "事件"
+  ],
+  "faaliyetYeri": [
+   "Faaliyet yeri",
+   "Activity site",
+   "Lugar de actividad",
+   "活动地点"
+  ],
+  "ilgiliHaber": [
+   "İlgili haber",
+   "Related news",
+   "Noticias relacionadas",
+   "相关新闻"
+  ],
+  "markalarUrun": [
+   "Markalar ve ürünler",
+   "Brands and products",
+   "Marcas y productos",
+   "品牌与产品"
+  ],
+  "olaySirasi": [
+   "Olay sırası",
+   "Sequence of events",
+   "Secuencia de eventos",
+   "事件经过"
+  ],
+  "kaynaklar": [
+   "Kaynaklar",
+   "Sources",
+   "Fuentes",
+   "来源"
+  ],
+  "dayanir": [
+   "Bu kayıt yukarıdaki kaynaklara dayanır.",
+   "This record is based on the sources above.",
+   "Este registro se basa en las fuentes anteriores.",
+   "本记录基于上述来源。"
+  ],
+  "hataBildir": [
+   "Hata bildir",
+   "Report an error",
+   "Informar de un error",
+   "报告错误"
+  ],
+  "lMarka": [
+   "○ marka",
+   "○ brand",
+   "○ marca",
+   "○ 品牌"
+  ],
+  "lFaaliyet": [
+   "◇ faaliyet",
+   "◇ activity",
+   "◇ actividad",
+   "◇ 活动"
+  ],
+  "lKaynak": [
+   "□ kaynak",
+   "□ source",
+   "□ fuente",
+   "□ 来源"
+  ],
+  "barkodAciklama": [
+   "Ürünün üzerindeki 13 haneli barkodu yaz. Ön ek, ürünü kaydeden şirketin ülkesini gösterir; üretim yerini değil.",
+   "Enter the 13-digit barcode on the product. The prefix shows the country where the company registered it, not where it was made.",
+   "Escribe el código de barras de 13 dígitos del producto. El prefijo indica el país donde la empresa lo registró, no dónde se fabricó.",
+   "输入产品上的13位条形码。前缀表示企业注册所在国，而非生产地。"
+  ],
+  "sorgula": [
+   "SORGULA",
+   "LOOK UP",
+   "CONSULTAR",
+   "查询"
+  ],
+  "bk13": [
+   "Barkod 13 haneli olmalı. Ürünün arkasındaki çizgilerin altındaki sayıyı yaz.",
+   "The barcode must have 13 digits. Enter the number under the bars on the back of the product.",
+   "El código debe tener 13 dígitos. Escribe el número bajo las barras del producto.",
+   "条形码必须为13位。请输入产品背面条码下方的数字。"
+  ],
+  "bkHane": [
+   "Bu barkodun kontrol hanesi tutmuyor. Rakamları yeniden kontrol et.",
+   "The check digit does not match. Check the digits again.",
+   "El dígito de control no coincide. Revisa los números.",
+   "校验位不匹配。请重新核对数字。"
+  ],
+  "bk729": [
+   "<b>729 ön eki: İsrail GS1 kaydı.</b><br>Ürün İsrail'de kayıtlı bir şirkete ait olabilir. Ön ek üretim yerini değil kayıt ülkesini gösterir.",
+   "<b>Prefix 729: GS1 Israel registration.</b><br>The product may belong to a company registered in Israel. The prefix shows the registration country, not the place of manufacture.",
+   "<b>Prefijo 729: registro GS1 Israel.</b><br>El producto puede pertenecer a una empresa registrada en Israel. El prefijo indica el país de registro, no el de fabricación.",
+   "<b>前缀729：以色列GS1注册。</b><br>该产品可能属于在以色列注册的企业。前缀表示注册国，而非生产地。"
+  ],
+  "bkTemiz": [
+   "Ön ek {p}: İsrail kaydı değil. Bu, ürünün listedeki bir şirkete ait olmadığı anlamına gelmez; marka adını aramada da dene.",
+   "Prefix {p}: not an Israeli registration. This does not mean the product is unrelated to a listed company; also try searching the brand name.",
+   "Prefijo {p}: no es un registro israelí. Esto no significa que el producto no pertenezca a una empresa de la lista; busca también la marca.",
+   "前缀 {p}：非以色列注册。这并不代表该产品与列表中的企业无关；也可搜索品牌名称。"
+  ],
+  "yontem1": [
+   "Her kayıt en az bir kamuya açık kaynağa dayanır: BDS hareketinin listeleri ve haber ajansları. Site kendi suçlamasını yazmaz; kaynağın söylediğini özetler ve bağlantısını verir.",
+   "Every record relies on at least one public source: BDS movement lists and news agencies. The site makes no accusations of its own; it summarizes what the source says and links to it.",
+   "Cada registro se basa en al menos una fuente pública: listas del movimiento BDS y agencias de noticias. El sitio no formula acusaciones propias; resume lo que dice la fuente y la enlaza.",
+   "每条记录至少基于一个公开来源：BDS运动的名单和新闻机构。本站不作任何自己的指控，只概述来源内容并附上链接。"
+  ],
+  "yontem2": [
+   "Haberler 6 saatte bir otomatik derlenir. Varlık kayıtları yalnız insan onayıyla değişir. Çeviriler özgün Türkçe kayda dayanır.",
+   "News is compiled automatically every 6 hours. Entity records change only with human approval. Translations are based on the original Turkish record.",
+   "Las noticias se recopilan automáticamente cada 6 horas. Los registros solo cambian con aprobación humana. Las traducciones se basan en el registro original en turco.",
+   "新闻每6小时自动汇编一次。实体记录仅在人工审核后更改。译文以土耳其语原始记录为准。"
+  ],
+  "yontem3": [
+   "Hatalı bilgiyi GitHub üzerinden bildirebilirsin. Bu site bilgilendirme amaçlıdır ve sorumluluk kabul etmez.",
+   "You can report errors via GitHub. This site is for information only and accepts no liability.",
+   "Puedes informar de errores en GitHub. Este sitio es solo informativo y no acepta responsabilidad.",
+   "可通过GitHub报告错误。本站仅供参考，不承担任何责任。"
+  ],
+  "g1": [
+   "KÜRESEL GÖZLEM · DURUM BRİFİNGİ · {d}",
+   "GLOBAL WATCH · SITUATION BRIEFING · {d}",
+   "OBSERVACIÓN GLOBAL · INFORME DE SITUACIÓN · {d}",
+   "全球观察 · 态势简报 · {d}"
+  ],
+  "g2": [
+   "{n} VARLIK · {u} ÜLKE · {b} FAALİYET BAĞLANTISI",
+   "{n} ENTITIES · {u} COUNTRIES · {b} ACTIVITY LINKS",
+   "{n} ENTIDADES · {u} PAÍSES · {b} VÍNCULOS DE ACTIVIDAD",
+   "{n} 个实体 · {u} 个国家 · {b} 条活动关联"
+  ],
+  "g3": [
+   "HER İDDİA KAYNAĞIYLA GÖSTERİLİR",
+   "EVERY CLAIM IS SHOWN WITH ITS SOURCE",
+   "CADA AFIRMACIÓN SE MUESTRA CON SU FUENTE",
+   "每项指控均附有来源"
+  ],
+  "adimMetin": [
+   "{ad}, {sehir}. {neden} Faaliyet yeri: {yer}, merkeze {km} km.",
+   "{ad}, {sehir}. {neden} Activity site: {yer}, {km} km from HQ.",
+   "{ad}, {sehir}. {neden} Lugar de actividad: {yer}, a {km} km de la sede.",
+   "{ad}，{sehir}。{neden}活动地点：{yer}，距总部 {km} 公里。"
+  ],
+  "basarili": [
+   "SONUÇ ALINDI · BOYKOT İŞE YARADI",
+   "ACHIEVED · THE BOYCOTT WORKED",
+   "LOGRADO · EL BOICOT FUNCIONÓ",
+   "已见成效 · 抵制奏效"
+  ],
+  "brifingNo": [
+   "BRİFİNG",
+   "BRIEFING",
+   "INFORME",
+   "简报"
+  ],
+  "bitti": [
+   "BRİFİNG TAMAMLANDI",
+   "BRIEFING COMPLETE",
+   "INFORME COMPLETADO",
+   "简报完毕"
+  ],
+  "f1": [
+   "{n} VARLIK İNCELENDİ · {s} KAMPANYA SONUÇ ALDI",
+   "{n} ENTITIES REVIEWED · {s} CAMPAIGNS ACHIEVED RESULTS",
+   "{n} ENTIDADES REVISADAS · {s} CAMPAÑAS LOGRARON RESULTADOS",
+   "已审查 {n} 个实体 · {s} 项运动取得成效"
+  ],
+  "f2": [
+   "{l}: GEREKÇE OLAN FAALİYET SONA ERDİ",
+   "{l}: THE CONTESTED ACTIVITY ENDED",
+   "{l}: LA ACTIVIDAD CUESTIONADA TERMINÓ",
+   "{l}：引发争议的活动已终止"
+  ],
+  "ve": [
+   " VE ",
+   " AND ",
+   " Y ",
+   "、"
+  ],
+  "f3": [
+   "TERCİHİN BİR SİNYALDİR. SİNYAL TOPLANINCA SES OLUR.",
+   "YOUR CHOICE IS A SIGNAL. SIGNALS ADD UP TO A VOICE.",
+   "TU ELECCIÓN ES UNA SEÑAL. LAS SEÑALES SUMADAS SE VUELVEN UNA VOZ.",
+   "你的选择是一种信号。信号汇聚，便成声音。"
+  ],
+  "duzeltme": [
+   "Düzeltme",
+   "Correction",
+   "Corrección",
+   "更正"
+  ],
+  "haritaHata": [
+   "HARİTA KATMANI YÜKLENEMEDİ · VARLIKLAR GÖSTERİLİYOR",
+   "MAP LAYER FAILED TO LOAD · SHOWING ENTITIES",
+   "NO SE PUDO CARGAR EL MAPA · MOSTRANDO ENTIDADES",
+   "地图图层加载失败 · 仍显示实体"
+  ],
+  "sonGuncelleme": [
+   "Son güncelleme",
+   "Last update",
+   "Última actualización",
+   "最后更新"
+  ],
+  "veriHatasi": [
+   "Veri yüklenemedi. Sayfayı yenile.",
+   "Data could not be loaded. Reload the page.",
+   "No se pudieron cargar los datos. Recarga la página.",
+   "数据加载失败，请刷新页面。"
+  ]
+ },
+ "durumAd": {
+  "bds": [
+   "BDS hedefi",
+   "BDS target",
+   "Objetivo BDS",
+   "BDS目标"
+  ],
+  "baski": [
+   "Baskı kamp.",
+   "Pressure camp.",
+   "Campaña de presión",
+   "施压运动"
+  ],
+  "halk": [
+   "Halk boykotu",
+   "Public boycott",
+   "Boicot popular",
+   "民间抵制"
+  ],
+  "sonuc": [
+   "Sonuç alındı",
+   "Achieved",
+   "Logrado",
+   "已见成效"
+  ]
+ },
+ "kategoriAd": {
+  "Gıda": [
+   "Gıda",
+   "Food",
+   "Alimentación",
+   "食品"
+  ],
+  "Teknoloji": [
+   "Teknoloji",
+   "Technology",
+   "Tecnología",
+   "科技"
+  ],
+  "Giyim": [
+   "Giyim",
+   "Apparel",
+   "Ropa",
+   "服装"
+  ],
+  "Finans": [
+   "Finans",
+   "Finance",
+   "Finanzas",
+   "金融"
+  ],
+  "Enerji": [
+   "Enerji",
+   "Energy",
+   "Energía",
+   "能源"
+  ],
+  "Medya": [
+   "Medya",
+   "Media",
+   "Medios",
+   "媒体"
+  ],
+  "Turizm": [
+   "Turizm",
+   "Travel",
+   "Turismo",
+   "旅游"
+  ],
+  "İlaç": [
+   "İlaç",
+   "Pharma",
+   "Farmacéutica",
+   "制药"
+  ],
+  "Telekom": [
+   "Telekom",
+   "Telecom",
+   "Telecomunicaciones",
+   "电信"
+  ],
+  "Altyapı": [
+   "Altyapı",
+   "Infrastructure",
+   "Infraestructura",
+   "基础设施"
+  ],
+  "Gayrimenkul": [
+   "Gayrimenkul",
+   "Real estate",
+   "Inmobiliaria",
+   "房地产"
+  ],
+  "Ulaşım": [
+   "Ulaşım",
+   "Transport",
+   "Transporte",
+   "交通"
+  ],
+  "İnşaat": [
+   "İnşaat",
+   "Construction",
+   "Construcción",
+   "建筑"
+  ],
+  "Perakende": [
+   "Perakende",
+   "Retail",
+   "Comercio minorista",
+   "零售"
+  ],
+  "Savunma": [
+   "Savunma",
+   "Defence",
+   "Defensa",
+   "国防"
+  ],
+  "Sanayi": [
+   "Sanayi",
+   "Industry",
+   "Industria",
+   "工业"
+  ],
+  "Tarım": [
+   "Tarım",
+   "Agriculture",
+   "Agricultura",
+   "农业"
+  ],
+  "Diğer": [
+   "Diğer",
+   "Other",
+   "Otros",
+   "其他"
+  ]
+ },
+ "listeAd": {
+  "bds": [
+   "BDS listesi",
+   "BDS list",
+   "Lista BDS",
+   "BDS名单"
+  ],
+  "ohchr": [
+   "BM OHCHR",
+   "UN OHCHR",
+   "ONU ACNUDH",
+   "联合国OHCHR"
+  ],
+  "ulke": [
+   "Ülke listesi",
+   "Country list",
+   "Lista nacional",
+   "国家名单"
+  ]
+ }
+}

@@ -1,0 +1,11 @@
+/* Boykot · tasarım belirteçleri (v0.6 prototipinden birebir) */
+:root{
+  --zemin:#070908; --yuzey:#0a0d0b; --yuzey2:#101511; --cizgi:#1a211c; --cizgi2:#2b352d; --izgara:rgba(130,150,135,.04);
+  --metin:#d9ded7; --ikincil:#9aa598; --sonuk:#66736a;
+  --aksan:#e04a32; --bds:#e04a32; --baski:#d99b2f; --halk:#c8bd4e; --sonuc:#3fae74;
+  --bds-zemin:rgba(224,74,50,.08); --sari:#d99b2f; --basari:#3fae74; --gri:#c8bd4e;
+  --kara:#5d6f62; --sinir:#405346;
+  --sans:"IBM Plex Sans","Noto Sans SC",system-ui,sans-serif; --mono:"IBM Plex Mono","Noto Sans SC",ui-monospace,monospace;
+  --ust:44px; --sol:300px; --sag:380px; --alt:176px;
+}
+:root{--g:8px;--r:0px;--r2:2px;--golge:none;--kc:var(--cizgi2)}
