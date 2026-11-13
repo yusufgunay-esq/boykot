@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Fikstür Atom</title>
+ <entry>
+  <title>UN OHCHR updates business database</title>
+  <link rel="alternate" href="https://ornek.test/atom/ohchr?fbclid=abc123"/>
+  <published>2026-11-07T06:00:00Z</published>
+  <summary>UN OHCHR &lt;b&gt;database&lt;/b&gt; update.</summary>
+ </entry>
+ <entry>
+  <title>Tarihsiz kayıt</title>
+  <link href="https://ornek.test/atom/tarihsiz"/>
+  <summary>Tarih yok; ayrıştırıcı null döndürür.</summary>
+ </entry>
+</feed>

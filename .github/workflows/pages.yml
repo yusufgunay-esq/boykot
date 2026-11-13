@@ -1,0 +1,50 @@
+name: Sayfayı yayınla
+
+# GitHub Pages'e yalnız yayın paketi gider: index.html, css/, js/, data/, yasal.html.
+# Tasarım prototipi (tasarim/), araçlar (araclar/), testler (test/) ve _claude/ paket dışındadır.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  yayinla:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.dagit.outputs.page_url }}
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+
+      - name: Yayın paketini hazırla
+        run: |
+          set -eu
+          rm -rf _site
+          mkdir -p _site
+          cp index.html yasal.html _site/
+          cp -r css js data _site/
+          echo "Yayın paketi:"
+          find _site -type f | sort
+
+      - name: Pages ayarları
+        uses: actions/configure-pages@v5
+
+      - name: Paketi yükle
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Yayınla
+        id: dagit
+        uses: actions/deploy-pages@v4

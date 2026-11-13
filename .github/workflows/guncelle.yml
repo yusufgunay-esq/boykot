@@ -1,0 +1,102 @@
+name: Veri güncelle
+
+# Altı saatte bir haber akışını tazeler ve kaynak listelerini denetler.
+# Veri değişmediyse commit atılmaz; liste farkı varsa tek bir issue açılır/güncellenir.
+# Herhangi bir adım hata verirse workflow kırılır ve issue açılmaz.
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+# Aynı anda tek güncelleme; kuyruktaki çalışma iptal edilmez.
+concurrency:
+  group: veri-guncelle
+  cancel-in-progress: false
+
+jobs:
+  guncelle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+
+      - name: Node kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Haber akışını çek
+        run: node araclar/haber-cek.mjs --azami 40 --gun 90
+
+      - name: Kaynak listelerini denetle
+        run: node araclar/liste-denetle.mjs --rapor liste-raporu.json
+
+      - name: Testleri koş
+        run: npm test
+
+      - name: Değişikliği commit et
+        id: commit
+        run: |
+          if git diff --quiet -- data/haberler.json; then
+            echo "degisti=false" >> "$GITHUB_OUTPUT"
+            echo "haberler.json değişmedi; commit atılmadı."
+            exit 0
+          fi
+          HABER=$(grep -c '"sirketId"' data/haberler.json || true)
+          FARK=$(node -e "const r=JSON.parse(require('fs').readFileSync('liste-raporu.json','utf8'));console.log(r.fark||0)")
+          git config user.name "boykot-bot"
+          git config user.email "boykot-bot@users.noreply.github.com"
+          git add data/haberler.json
+          git commit -m "veri: haber akışı güncellendi — ${HABER} haber, liste farkı ${FARK}, $(date -u +%Y-%m-%dT%H:%MZ); testler yeşil"
+          git push
+          echo "degisti=true" >> "$GITHUB_OUTPUT"
+
+      - name: Liste farkı için tek issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const rapor = JSON.parse(fs.readFileSync('liste-raporu.json', 'utf8'));
+            if (!rapor || !rapor.fark) {
+              core.info('Liste farkı yok; issue açılmadı.');
+              return;
+            }
+            const satirlar = [];
+            for (const l of rapor.listeler) {
+              if (!l.yeni.length && !l.eksik.length) continue;
+              satirlar.push('### ' + l.ad + (l.supheli ? ' (ayrıştırma şüpheli, fark üretilmedi)' : ''));
+              if (l.url) satirlar.push('Kaynak: ' + l.url);
+              if (l.yeni.length) satirlar.push('- Veride yok: ' + l.yeni.join(', '));
+              if (l.eksik.length) satirlar.push('- Kaynakta yok: ' + l.eksik.join(', '));
+            }
+            const govde = [
+              'Kaynak listeleri veriyle karşılaştırıldı. **Veri dosyaları değiştirilmedi**; bu yalnızca inceleme raporudur.',
+              '',
+              satirlar.join('\n'),
+              '',
+              'Rapor: `liste-raporu.json` — workflow çalışması ' + context.runId + '.',
+              'Farkı doğruladıktan sonra `data/sirketler.json` elle güncellenmeli veya bu issue kapatılmalıdır.'
+            ].join('\n');
+
+            const baslik = 'Kaynak liste farkı';
+            const { data: acik } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100
+            });
+            const varOlan = acik.find(i => i.title === baslik);
+            if (varOlan) {
+              await github.rest.issues.update({
+                owner: context.repo.owner, repo: context.repo.repo, issue_number: varOlan.number, body: govde
+              });
+              core.info('Var olan issue güncellendi: #' + varOlan.number);
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo, title: baslik, body: govde
+              });
+              core.info('Yeni issue açıldı.');
+            }

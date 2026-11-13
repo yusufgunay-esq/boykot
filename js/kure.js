@@ -196,7 +196,11 @@ function gorKayHedef() {
   return -((sol + 24 + 400) + (W - 24 - 350) - W) / 2;
 }
 
+let duraklat = false;
+export function renderDuraklat(v) { duraklat = !!v; }
+
 function dongu(z) {
+  if (duraklat) { requestAnimationFrame(dongu); return; }
   if (ucus) {
     const k = Math.min(1, (z - ucus.t0) / ucus.sure), e = kolay(k), l = THREE.MathUtils.lerp(ucus.bas.length(), ucus.hedef.length(), e);
     kamera.position.copy(ucus.bas).normalize().lerp(ucus.hedef.clone().normalize(), e).normalize().multiplyScalar(l); if (k >= 1) ucus = null;
@@ -240,10 +244,21 @@ export function hudSayCiz() {
   const el = document.getElementById('katSay'); if (!el) return;
   const acik = Object.values(K).filter(g => g.visible).length;
   el.textContent = acik + '/' + KATMANLAR().length;
-  const h = document.getElementById('hudSay'); if (h) h.textContent = t('hudSay', { k: acik, v: D.filtrele().length });
+  const h = document.getElementById('hudSay');
+  if (h) h.textContent = t('hudSay', { k: acik, v: D.filtrele ? D.filtrele().length : D.SIRKETLER.length });
 }
 
 /* ================= DIŞA AÇILAN DURUM ================= */
+/* Verilen konumu ekran pikseline çevirir; kürenin arkasındaysa null döner. */
+export function kureProjeksiyon(lat, lng) {
+  if (!kamera) return null;
+  const p = v3(lat, lng, R * 1.01), ileri = kamera.position.clone().normalize();
+  if (p.clone().normalize().dot(ileri) < .15) return null;
+  p.project(kamera);
+  const kap = document.getElementById('kure'), kr = kap.getBoundingClientRect();
+  return { x: (p.x + 1) / 2 * kr.width, y: (1 - p.y) / 2 * kr.height, sol: kr.left, ust: kr.top };
+}
+
 export function isaretFiltrele(liste) {
   const g = new Set(liste.map(s => s.id));
   isaretler.forEach(m => m.g.visible = g.has(m.s.id));
@@ -267,5 +282,5 @@ export function kureBagla(deps) {
   haritaKur();
   requestAnimationFrame(dongu);
   boyutla();
-  Object.assign(D, { ucur, nisanCiz, nisanGizle, menzilCiz, menzilGizle, isaretFiltrele, yayVurgula, yaySayisi, kureSifirla, katmanCiz, hudSayCiz, kureBoyutla: boyutla, haritaDurumu });
+  Object.assign(D, { ucur, nisanCiz, nisanGizle, menzilCiz, menzilGizle, isaretFiltrele, yayVurgula, yaySayisi, kureSifirla, katmanCiz, hudSayCiz, kureBoyutla: boyutla, haritaDurumu, kureProjeksiyon, renderDuraklat });
 }

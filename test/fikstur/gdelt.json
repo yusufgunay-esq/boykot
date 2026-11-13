@@ -1,0 +1,52 @@
+{
+ "articles": [
+  {
+   "title": "Chevron faces boycott call over East Mediterranean gas",
+   "url": "https://ornek.test/gdelt/chevron-dogaz?utm_campaign=x",
+   "seendate": "20261109T101500Z",
+   "domain": "ornek.test"
+  },
+  {
+   "title": "BAE Systems named on UN rights list",
+   "url": "https://ornek.test/gdelt/bae-ohchr",
+   "seendate": "20261112T070000Z",
+   "domain": "ornek2.test"
+  },
+  {
+   "title": "Local weather report for Tuesday",
+   "url": "https://ornek.test/gdelt/hava",
+   "seendate": "20261112T080000Z",
+   "domain": "ornek3.test"
+  },
+  {
+   "title": "Intelligence agency publishes annual review",
+   "url": "https://ornek.test/gdelt/istihbarat",
+   "seendate": "20261111T090000Z",
+   "domain": "ornek4.test"
+  },
+  {
+   "title": "BAE Systems named on UN rights list",
+   "url": "https://ornek.test/gdelt/bae-ohchr-kopya",
+   "seendate": "20261112T071000Z",
+   "domain": "ornek5.test"
+  },
+  {
+   "title": "Chevron East Mediterranean gas and the boycott call",
+   "url": "https://ornek.test/gdelt/chevron-eski",
+   "seendate": "20250101T000000Z",
+   "domain": "ornek6.test"
+  },
+  {
+   "title": "Airbnb listings in settlements under scrutiny",
+   "url": "https://ornek.test/gdelt/airbnb",
+   "seendate": "20261113T030000Z",
+   "domain": "ornek7.test"
+  },
+  {
+   "title": "Siemens contract mentioned in divestment vote",
+   "url": "https://ornek.test/gdelt/siemens",
+   "seendate": "20261106T120000Z",
+   "domain": "ornek8.test"
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <title>Fikstür akışı</title>
+  <link>https://ornek.test/</link>
+  <description>Sınamalar için sabit RSS/Atom karışımı; ağa çıkılmaz.</description>
+  <item>
+   <title><![CDATA[Chevron agrees to buy Noble Energy for $5 billion]]></title>
+   <link>https://ornek.test/haber/chevron-noble?utm_source=rss&amp;utm_medium=feed</link>
+   <pubDate>Mon, 10 Nov 2026 08:00:00 GMT</pubDate>
+   <description><![CDATA[<p>Chevron said the deal &amp; financing are complete.</p>]]></description>
+  </item>
+  <item>
+   <title>Chevron to buy Noble Energy for $5 billion</title>
+   <link>https://ornek.test/haber/chevron-noble-kopya</link>
+   <pubDate>Tue, 11 Nov 2026 09:30:00 GMT</pubDate>
+   <description>Aynı haberin ikinci kopyası.</description>
+  </item>
+  <item>
+   <title>Intel expands its Arizona plant</title>
+   <link>https://ornek.test/haber/intel-arizona</link>
+   <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
+   <description>Intel yatırımını büyütüyor.</description>
+  </item>
+  <item>
+   <title>Eski haber: Microsoft ve BDS</title>
+   <link>https://ornek.test/haber/eski</link>
+   <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
+   <description>90 gün penceresinin dışında.</description>
+  </item>
+  <item>
+   <title>HP supply chain note</title>
+   <link>http://ornek.test/haber/hp</link>
+   <pubDate>Mon, 09 Nov 2026 10:00:00 GMT</pubDate>
+   <description>http bağlantı; veriye alınmamalı.</description>
+  </item>
+  <item>
+   <title>Dell Technologies statement</title>
+   <link>https://ornek.test/haber/dell</link>
+   <pubDate>Sun, 08 Nov 2026 16:45:00 GMT</pubDate>
+   <description>Dell açıklama yaptı.</description>
+  </item>
+ </channel>
+</rss>

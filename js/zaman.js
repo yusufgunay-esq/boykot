@@ -72,6 +72,45 @@ export function zcCiz() {
   s += '</g>';
   s += `<line x1="${x(simdi)}" y1="0" x2="${x(simdi)}" y2="${H - 18}" stroke="var(--aksan)" stroke-dasharray="2 3"/><text x="${x(simdi) - 4}" y="${H - 5}" text-anchor="end" style="font-family:var(--mono);font-size:11px;fill:var(--aksan)">${t('simdi')}</text>`;
   let say = 0;
+
+  /* 60'tan fazla kayıtta satırlar 4 px'in altına iner: satır başına süre çizgileri üst üste
+     binip okunmaz bir blok oluşturur. O durumda yıl başına olay yoğunluğu sütunları çizilir;
+     "sonuç alındı" olayları sütunun altında yeşil segment olarak ayrılır. */
+  if (l.length > 60 || satir < 4) {
+    const yil = new Map();
+    for (let y = y0; y < y1; y++) yil.set(y, { t: 0, s: 0 });
+    const ekle = (z, sonuc) => {
+      const y = Math.floor(tarihYil(z));
+      if (y < y0 || y >= y1) return;
+      const b = yil.get(y); b.t++; say++;
+      if (sonuc) b.s++;
+    };
+    for (const sr of l) {
+      sr.zaman.forEach(([z]) => ekle(z, sr.durum === 'sonuc'));
+      for (const h of D.HABERLER) if (h.sirketId === sr.id) ekle(String(h.tarih).slice(0, 7), false);
+    }
+    const adim = (W - sol - pad) / (y1 - y0), mx = Math.max(1, ...[...yil.values()].map(b => b.t));
+    const taban = H - 20, yuk = H - 36, aralik = Math.min(10, Math.max(4, adim * .1));
+    /* Prototipin işaret dili korunur: dolu blok yok — yıl başına iki ince iğne (toplam + sonuç)
+       ve uçlarında küçük baklava. Yoğunluk yükseklikten okunur, alan dolgusu kullanılmaz. */
+    const igne = (bx, h, renk, op) => h > 0 ? `<line x1="${bx}" y1="${taban}" x2="${bx}" y2="${taban - h}" stroke="${renk}" stroke-opacity="${op}" stroke-width="1.5"/><rect x="${bx - 2.5}" y="${taban - h - 2.5}" width="5" height="5" transform="rotate(45 ${bx} ${taban - h})" fill="none" stroke="${renk}" stroke-opacity="${op}" stroke-width="1"/>` : '';
+    s += `<clipPath id="zcKes"><rect x="0" y="0" width="${W}" height="${H}"/></clipPath><g clip-path="url(#zcKes)">`;
+    for (const [y, b] of yil) {
+      if (!b.t) continue;
+      const hT = Math.max(1, b.t / mx * yuk), hS = b.s ? Math.max(1, b.s / mx * yuk) : 0;
+      const bx = x(y) + Math.max(6, adim * .2);
+      s += `<g class="yil-igne"><title>${y} · ${b.t} ${t('olay')}${b.s ? ' · ' + b.s + ' ' + durumAd('sonuc') : ''}</title>${igne(bx, hT, 'var(--ikincil)', .6)}${igne(bx + aralik, hS, 'var(--sonuc)', .8)}`;
+      if (hT > 22) s += `<text x="${bx}" y="${taban - hT - 7}" text-anchor="middle" style="font-family:var(--mono);font-size:10px;fill:var(--sonuk)">${b.t}</text>`;
+      s += '</g>';
+    }
+    s += '</g>';
+    el.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    el.innerHTML = s;
+    const sayEl = document.getElementById('zcSay');
+    if (sayEl) sayEl.textContent = say + ' ' + t('olay');
+    return;
+  }
+
   s += `<clipPath id="zcKes"><rect x="0" y="0" width="${W}" height="${H}"/></clipPath><g clip-path="url(#zcKes)">`;
   l.forEach((sr, i) => {
     const yy = 6 + i * satir + satir / 2, ak = secili && secili.id === sr.id, r = css(DURUM[sr.durum][1]);

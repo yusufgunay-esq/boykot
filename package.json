@@ -1,0 +1,13 @@
+{
+ "name": "boykot",
+ "version": "0.1.0",
+ "private": true,
+ "type": "module",
+ "description": "Boykot — açık kaynaklı boykot rehberi. Statiktir, derleme adımı yoktur; bu dosya yalnız geliştirme ve test içindir.",
+ "engines": {
+  "node": ">=20"
+ },
+ "scripts": {
+  "test": "node --test"
+ }
+}

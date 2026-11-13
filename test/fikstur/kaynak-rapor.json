@@ -1,0 +1,10 @@
+{
+ "surum": 1,
+ "tarih": "2026-11-13T06:00:00.000Z",
+ "denetim": [
+  { "url": "https://bdsmovement.net/Guide-to-BDS-Boycott", "durum": "canli", "kod": 200, "tip": "text/html; charset=utf-8", "boyut": 48211 },
+  { "url": "https://www.ohchr.org/en/hr-bodies/hrc/ffm/opt-businesses", "durum": "canli", "kod": 200, "tip": "text/html", "boyut": 91220 },
+  { "url": "https://ornek.test/kayip", "durum": "olu", "kod": 404, "tip": "text/html", "boyut": 812 },
+  { "url": "https://ornek.test/ag-hatasi", "durum": "hata", "kod": null, "tip": "", "boyut": null }
+ ]
+}

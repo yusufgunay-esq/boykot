@@ -1,5 +1,5 @@
 {
- "surum": 2,
+ "surum": 3,
  "diller": [
   "tr",
   "en",
@@ -110,10 +110,10 @@
    "信号来源 · 公开来源"
   ],
   "a2": [
-   "VARLIK {n} · ÜLKE {u} · BAĞLANTI {b}",
-   "ENTITIES {n} · COUNTRIES {u} · LINKS {b}",
-   "ENTIDADES {n} · PAÍSES {u} · VÍNCULOS {b}",
-   "实体 {n} · 国家 {u} · 关联 {b}"
+   "VARLIK {n} · ÜLKE {u} · KAYNAK {b}",
+   "ENTITIES {n} · COUNTRIES {u} · SOURCES {b}",
+   "ENTIDADES {n} · PAÍSES {u} · FUENTES {b}",
+   "实体 {n} · 国家 {u} · 来源 {b}"
   ],
   "a3": [
    "GÖZLEM AKTİF · HER İDDİA KAYNAĞIYLA",
@@ -638,10 +638,10 @@
    "前缀 {p}：非以色列注册。这并不代表该产品与列表中的企业无关；也可搜索品牌名称。"
   ],
   "yontem1": [
-   "Her kayıt en az bir kamuya açık kaynağa dayanır: BDS hareketinin listeleri ve haber ajansları. Site kendi suçlamasını yazmaz; kaynağın söylediğini özetler ve bağlantısını verir.",
-   "Every record relies on at least one public source: BDS movement lists and news agencies. The site makes no accusations of its own; it summarizes what the source says and links to it.",
-   "Cada registro se basa en al menos una fuente pública: listas del movimiento BDS y agencias de noticias. El sitio no formula acusaciones propias; resume lo que dice la fuente y la enlaza.",
-   "每条记录至少基于一个公开来源：BDS运动的名单和新闻机构。本站不作任何自己的指控，只概述来源内容并附上链接。"
+   "Her kayıt en az bir kamuya açık kaynağa dayanır: BDS hareketi, BM OHCHR veritabanı ve ülke listeleri; haberler ajanslardan gelir. Site kendi suçlamasını yazmaz; kaynağın söylediğini özetler ve bağlantısını verir.",
+   "Every record relies on at least one public source: the BDS movement, the UN OHCHR database and country lists; news comes from agencies. The site makes no accusations of its own; it summarizes what the source says and links to it.",
+   "Cada registro se basa en al menos una fuente pública: el movimiento BDS, la base de datos de la ONU (ACNUDH) y listas nacionales; las noticias provienen de agencias. El sitio no formula acusaciones propias; resume lo que dice la fuente y la enlaza.",
+   "每条记录至少基于一个公开来源：BDS运动、联合国人权高专办数据库和国家名单；新闻来自通讯社。本站不作任何自己的指控，只概述来源内容并附上链接。"
   ],
   "yontem2": [
    "Haberler 6 saatte bir otomatik derlenir. Varlık kayıtları yalnız insan onayıyla değişir. Çeviriler özgün Türkçe kayda dayanır.",
@@ -744,6 +744,24 @@
    "Data could not be loaded. Reload the page.",
    "No se pudieron cargar los datos. Recarga la página.",
    "数据加载失败，请刷新页面。"
+  ],
+  "kaynakListe": [
+   "Kaynak liste",
+   "Source list",
+   "Lista de fuente",
+   "来源名单"
+  ],
+  "ulkeKonum": [
+   "Konum ülke düzeyinde",
+   "Country-level position",
+   "Posición a nivel de país",
+   "位置精确到国家"
+  ],
+  "adimMetinTek": [
+   "{ad}, {sehir}. {neden}",
+   "{ad}, {sehir}. {neden}",
+   "{ad}, {sehir}. {neden}",
+   "{ad}，{sehir}。{neden}"
   ]
  },
  "durumAd": {
