@@ -1,1 +1,73 @@
-{"surum":1,"guncelleme":null,"kaynaklar":[],"haberler":[]}
+{
+ "surum": 1,
+ "guncelleme": "2026-11-13T12:28:23.522Z",
+ "kaynaklar": [
+  {
+   "ad": "GDELT DOC 2.0",
+   "url": "https://api.gdeltproject.org/"
+  },
+  {
+   "ad": "BDS Movement",
+   "url": "https://bdsmovement.net/rss.xml"
+  },
+  {
+   "ad": "Middle East Eye",
+   "url": "https://www.middleeasteye.net/rss"
+  },
+  {
+   "ad": "Al Jazeera",
+   "url": "https://www.aljazeera.com/xml/rss/all.xml"
+  }
+ ],
+ "haberler": [
+  {
+   "sirketId": "microsoft",
+   "baslik": "Live: Microsoft struggles to restore services as outage hits global users",
+   "url": "https://aljazeera.com/news/liveblog/2026/11/13/live-microsoft-struggles-to-restore-services-as-outage-hits-global-users?traffic_source=rss",
+   "kaynakAd": "Al Jazeera",
+   "tarih": "2026-11-13T11:18:01.000Z"
+  },
+  {
+   "sirketId": "meta",
+   "baslik": "India clears Israeli firm Cellebrite to supply phone-hacking tools to government agencies",
+   "url": "https://middleeasteye.net/live-blog/live-blog-update/india-clears-israeli-firm-cellebrite-supply-phone-hacking-tools",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-13T10:22:20.000Z"
+  },
+  {
+   "sirketId": "microsoft",
+   "baslik": "Microsoft hit by global outages: What happened and why?",
+   "url": "https://aljazeera.com/news/2026/11/13/microsoft-hit-by-global-outages-what-happened-and-why?traffic_source=rss",
+   "kaynakAd": "Al Jazeera",
+   "tarih": "2026-11-13T09:30:55.000Z"
+  },
+  {
+   "sirketId": "meta",
+   "baslik": "Exclusive: Toyota reviewing use of forklifts by Israeli military after MEE investigation",
+   "url": "https://middleeasteye.net/news/exclusive-toyota-investigating-use-forklifts-israeli-military-mee-investigation",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-13T09:25:32.000Z"
+  },
+  {
+   "sirketId": "iai",
+   "baslik": "Israeli companies linked to Gaza genocide to head to India for tech summits",
+   "url": "https://middleeasteye.net/news/israel-companies-linked-gaza-to-head-india-tech-summit",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-13T08:00:29.000Z"
+  },
+  {
+   "sirketId": "yes",
+   "baslik": "How Israel's war on Lebanon's water has become existential",
+   "url": "https://middleeasteye.net/news/how-israel-war-lebanon-water-has-become-existential",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-13T08:00:17.000Z"
+  },
+  {
+   "sirketId": "allianz",
+   "baslik": "Allianz Delivers Record Nine - month Result of 14 . 1 Billion Euros and Raises 2026 Outlook",
+   "url": "https://brantfordexpositor.ca/press-releases/business-wire/allianz-delivers-record-nine-month-result-of-14-1-billion-euros-and-raises-2026-outlook",
+   "kaynakAd": "brantfordexpositor.ca",
+   "tarih": "2026-11-12T07:00:00.000Z"
+  }
+ ]
+}
