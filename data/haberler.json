@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-14T03:58:23.176Z",
+ "guncelleme": "2026-11-14T06:32:12.209Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -29,13 +29,6 @@
    "url": "https://middleeasteye.net/news/activists-demand-end-transfer-military-materials-israel-through-new-yorks-jfk-airport",
    "kaynakAd": "Middle East Eye",
    "tarih": "2026-11-13T21:06:18.000Z"
-  },
-  {
-   "sirketId": "microsoft",
-   "baslik": "Microsoft says services still returning amid widespread outage",
-   "url": "https://aljazeera.com/news/2026/11/13/microsoft-says-services-still-returning-amid-widespread-outage?traffic_source=rss",
-   "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-13T20:16:13.000Z"
   }
  ]
 }
