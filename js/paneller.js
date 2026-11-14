@@ -4,6 +4,7 @@
 import { t, B, sayiTR, durumAd, katAd, listeAd, kategoriAdlari, ulkeAd, yerAdi } from './i18n.js';
 import { DURUM, renk, tarihYil, simdiYil, esc } from './veri.js';
 import { filtrele as safFiltrele, kucuk } from './filtre.js';
+import { agYerlesim } from './ag.js';
 
 let D = null;
 const $ = s => document.querySelector(s);
@@ -68,29 +69,101 @@ export function tabloCiz() {
   agCiz(); D.zcCiz && D.zcCiz();
 }
 
+const p = v => Math.round(v * 10) / 10;
+
+/* Sahne tam ekran (küre panellerin altına taşar); AĞ haritası panellerin arasına yerleşir. */
+function agKutu(W, H) {
+  if (innerWidth < 1024) return { x: 0, y: 0, w: W, h: H };
+  const sol = parseFloat(css('--sol')) || 300;
+  const sag = parseFloat(css('--sag')) || 380;
+  const alt = parseFloat(css('--alt')) || 176;
+  return { x: sol, y: 0, w: Math.max(320, W - sol - sag), h: Math.max(320, H - alt - 24) };
+}
+
+function yayYolu(cx, cy, R, bas, span) {
+  const x1 = p(cx + Math.cos(bas) * R), y1 = p(cy + Math.sin(bas) * R);
+  const x2 = p(cx + Math.cos(bas + span) * R), y2 = p(cy + Math.sin(bas + span) * R);
+  return `M${x1},${y1}A${R},${R} 0 ${span > Math.PI ? 1 : 0} 1 ${x2},${y2}`;
+}
+
+/* Merkez plakası: süzgeçli toplam ve durum bileşimi; seçimde varlık kimliği. */
+function merkezHtml(Y, sec) {
+  const w = Math.round(Y.R1 * (Y.dar ? 1.5 : 1.6));
+  const yer = `left:${Y.cx}px;top:${Y.cy}px;width:${w}px`;
+  if (sec) {
+    return `<div class="ag-merkez secili" style="${yer};--r:${renk(sec)}">
+      <div class="ag-m-ust"><i class="ag-m-kare"></i>${esc(t('agSecili'))} · ${sec.kod}</div>
+      <b class="ag-m-ad">${esc(sec.ad)}</b>
+      <div class="ag-m-meta">${esc(B(katAd(sec.kategori)))} · ${esc(ulkeAd(sec.ulke))}</div>
+      <div class="ag-m-durum"><i class="ag-m-nokta"></i>${esc(B(durumAd(sec.durum)))}<i>${sayiTR(sec.markalar.length)} ${esc(t('marka'))} · ${sayiTR(sec.kaynak.length)} ${esc(t('kaynak'))}</i></div>
+    </div>`;
+  }
+  const sira = Object.keys(DURUM), top = Math.max(1, Y.toplam);
+  const bar = sira.filter(k => Y.durum[k]).map(k => `<i style="width:${(Y.durum[k] / top * 100).toFixed(2)}%;background:${renk({ durum: k })}"></i>`).join('');
+  return `<div class="ag-merkez" style="${yer}">
+    <b class="ag-m-sayi">${sayiTR(Y.toplam)}</b>
+    <span class="ag-m-birim">${esc(t('agVarlik'))}</span>
+    <div class="ag-m-bar">${bar}</div>
+    <dl class="ag-m-legend">${sira.map(k => `<div><dt><i style="background:${renk({ durum: k })}"></i>${esc(B(durumAd(k)))}</dt><dd>${sayiTR(Y.durum[k] || 0)}</dd></div>`).join('')}</dl>
+    <div class="ag-m-alt">${sayiTR(Y.sektorler.length)} ${esc(t('agSektor'))} · ${sayiTR(Y.ulke)} ${esc(t('agUlke'))}</div>
+  </div>`;
+}
+
+/* AĞ: sektör halkası. Kategori = yay dilimi, varlık = yay üzerinde durum renginde nokta.
+   Seçimde yalnız seçilinin sektörü açık kalır; kimlik merkez plakasında okunur. */
 export function agCiz() {
   if (gorunum !== 'ag') return;
-  const el = $('#ag'), W = el.clientWidth, H = el.clientHeight; if (!W) return;
-  const l = filtrele(), cx = W / 2, cy = H / 2, R1 = Math.min(W, H) * .17, R2 = Math.min(W, H) * .36;
-  const kats = KATEGORI.filter(k => l.some(s => s.kategori === k)), kp = {}, sp = {};
-  kats.forEach((k, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / kats.length; kp[k] = [cx + Math.cos(a) * R1, cy + Math.sin(a) * R1]; });
-  l.forEach((s, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / l.length; sp[s.id] = [cx + Math.cos(a) * R2, cy + Math.sin(a) * R2, a]; });
-  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img"><circle cx="${cx}" cy="${cy}" r="${R1}" fill="none" stroke="var(--cizgi)" stroke-dasharray="2 4"/><circle cx="${cx}" cy="${cy}" r="${R2}" fill="none" stroke="var(--cizgi)" stroke-dasharray="2 4"/>`;
-  const secili = D.getSecili();
-  for (const s of l) {
-    const [x, y] = sp[s.id], [kx, ky] = kp[s.kategori], ak = secili && secili.id === s.id;
-    svg += `<path d="M${kx},${ky} Q${cx},${cy} ${x},${y}" fill="none" stroke="${ak ? css(DURUM[s.durum][1]) : 'var(--cizgi2)'}" stroke-width="${ak ? 1.5 : 1}" opacity="${secili && !ak ? .4 : 1}"/>`;
+  const el = $('#ag'), W = el.clientWidth, H = el.clientHeight; if (!W || !H) return;
+  const l = filtrele();
+  const K = agKutu(W, H);
+  const Y = agYerlesim(D.SIRKETLER, l, KATEGORI, W, H, K);
+  const secHam = D.getSecili();
+  const sec = secHam ? (l.find(x => x.id === secHam.id) || null) : null;
+  const secKat = sec ? sec.kategori : null;
+
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t('ag') + ' · ' + sayiTR(Y.toplam) + ' ' + t('agVarlik'))}">`;
+  svg += `<g class="ag-izgara" aria-hidden="true"><circle cx="${Y.cx}" cy="${Y.cy}" r="${Y.R1}"/><circle cx="${Y.cx}" cy="${Y.cy}" r="${Y.R2}"/>`;
+  for (let i = 0; i < 36; i++) {
+    const a = -Math.PI / 2 + i * Math.PI * 2 / 36, r1 = Y.R2 + 3, r2 = Y.R2 + (i % 3 === 0 ? 10 : 7);
+    svg += `<line class="ag-tik-cizgi" x1="${p(Y.cx + Math.cos(a) * r1)}" y1="${p(Y.cy + Math.sin(a) * r1)}" x2="${p(Y.cx + Math.cos(a) * r2)}" y2="${p(Y.cy + Math.sin(a) * r2)}"/>`;
   }
-  for (const k of kats) {
-    const [x, y] = kp[k];
-    svg += `<g><rect x="${x - 5}" y="${y - 5}" width="10" height="10" fill="var(--zemin)" stroke="var(--ikincil)"/><text x="${x}" y="${y - 12}" text-anchor="middle" style="font-family:var(--mono);font-size:11px;fill:var(--ikincil);letter-spacing:1px">${B(katAd(k))}</text></g>`;
+  svg += `</g>`;
+
+  for (let si = 0; si < Y.sektorler.length; si++) {
+    const sektor = Y.sektorler[si];
+    const aktif = sektor.kategori === secKat, r = aktif && sec ? renk(sec) : '';
+    svg += `<g class="ag-sektor${aktif ? ' aktif' : ''}"${r ? ` style="--r:${r}"` : ''}>`;
+    const sx1 = p(Y.cx + Math.cos(sektor.bas) * Y.R1), sy1 = p(Y.cy + Math.sin(sektor.bas) * Y.R1);
+    const sx2 = p(Y.cx + Math.cos(sektor.bas) * Y.R2), sy2 = p(Y.cy + Math.sin(sektor.bas) * Y.R2);
+    const ex2 = p(Y.cx + Math.cos(sektor.bas + sektor.span) * Y.R2), ey2 = p(Y.cy + Math.sin(sektor.bas + sektor.span) * Y.R2);
+    svg += `<path class="ag-dilim${si % 2 ? '' : ' cift'}" d="M${sektor.hub.x},${sektor.hub.y}L${sx2},${sy2}A${Y.R2},${Y.R2} 0 ${sektor.span > Math.PI ? 1 : 0} 1 ${ex2},${ey2}Z"/>`;
+    svg += `<line class="ag-sinir" x1="${sx1}" y1="${sy1}" x2="${sx2}" y2="${sy2}"/>`;
+    const ux = p(Y.cx + Math.cos(sektor.ort) * Y.R2), uy = p(Y.cy + Math.sin(sektor.ort) * Y.R2);
+    svg += `<line class="ag-eksen" x1="${sektor.hub.x}" y1="${sektor.hub.y}" x2="${ux}" y2="${uy}"/>`;
+    svg += `<path class="ag-yay${aktif ? ' aktif' : ''}${sektor.n ? '' : ' bos'}" d="${yayYolu(Y.cx, Y.cy, Y.R2, sektor.bas, sektor.span)}" fill="none"/>`;
+    const hubSag = Math.cos(sektor.ort) >= 0, hubAd = B(katAd(sektor.kategori)) + ' · ' + sektor.n;
+    svg += `<g class="ag-hub-g"><circle class="ag-hub-tik" cx="${sektor.hub.x}" cy="${sektor.hub.y}" r="12"/><rect class="ag-hub" x="${p(sektor.hub.x - 5)}" y="${p(sektor.hub.y - 5)}" width="10" height="10"/><rect class="ag-hub-i" x="${p(sektor.hub.x - 1.5)}" y="${p(sektor.hub.y - 1.5)}" width="3" height="3"/><text class="ag-hub-et" x="${p(sektor.hub.x + (hubSag ? 10 : -10))}" y="${p(sektor.hub.y + 3)}" text-anchor="${hubSag ? 'start' : 'end'}">${esc(hubAd)}</text></g>`;
+
+    const secD = sec ? sektor.dugumler.find(d => d.s.id === sec.id) : null;
+    if (secD) svg += `<line class="ag-sec-cizgi" x1="${sektor.hub.x}" y1="${sektor.hub.y}" x2="${secD.x}" y2="${secD.y}" style="stroke:${r}"/>`;
+
+    for (const d of sektor.dugumler) {
+      const s = d.s, sag = Math.cos(d.a) >= 0, seciliD = !!sec && sec.id === s.id;
+      svg += `<g class="ag-dugum${seciliD ? ' sec' : ''}" data-id="${esc(s.id)}" transform="translate(${d.x} ${d.y})"><circle class="ag-tik" r="5"/><rect class="ag-nokta" x="-1.8" y="-1.8" width="3.6" height="3.6" style="fill:${renk(s)}"/>`;
+      if (seciliD) svg += `<path class="ag-kose" d="M-10,-10h5M-10,-10v5M10,-10h-5M10,-10v5M-10,10h5M-10,10v-5M10,10h-5M10,10v-5" style="stroke:${renk(s)}"/>`;
+      svg += `<g class="ag-et" transform="translate(${sag ? 9 : -9} 0)" text-anchor="${sag ? 'start' : 'end'}"><text class="ag-et-ad" y="-2">${esc(s.ad)}</text><text class="ag-et-alt" y="9">${s.kod} · ${esc(s.ulke)}</text></g></g>`;
+    }
+
+    if (!Y.dar) {
+      const e = sektor.etiket, tx = e.yan === 'sag' ? e.x0 + 6 : e.x0 - 6, ex = e.yan === 'sag' ? tx - 3 : tx + 3;
+      svg += `<g class="ag-rim${aktif ? ' aktif' : ''}"><path class="ag-kilavuz" d="M${e.capaX},${e.capaY}L${e.x0},${e.y}L${ex},${e.y}" fill="none"/><text x="${tx}" y="${p(e.y + 3)}" text-anchor="${e.yan === 'sag' ? 'start' : 'end'}">${esc(B(katAd(sektor.kategori)))}<tspan class="ag-rim-sayi" dx="6">${sektor.n}</tspan></text></g>`;
+    }
+    svg += `</g>`;
   }
-  for (const s of l) {
-    const [x, y, a] = sp[s.id], sag = Math.cos(a) >= 0, ak = secili && secili.id === s.id, r = css(DURUM[s.durum][1]);
-    svg += `<g class="ag-dugum" data-id="${esc(s.id)}"><circle cx="${x}" cy="${y}" r="${ak ? 9 : 6}" fill="var(--zemin)" stroke="${r}" stroke-width="${ak ? 2 : 1.2}"/><circle cx="${x}" cy="${y}" r="2.5" fill="${r}"/>
-      <text x="${x + (sag ? 14 : -14)}" y="${y - 2}" text-anchor="${sag ? 'start' : 'end'}" style="font-family:var(--sans);font-size:12.5px;fill:var(--metin)">${esc(s.ad)}</text><text x="${x + (sag ? 14 : -14)}" y="${y + 12}" text-anchor="${sag ? 'start' : 'end'}">${s.kod} · ${esc(s.ulke)}</text></g>`;
-  }
-  el.innerHTML = svg + '</svg>';
+  el.innerHTML = svg + '</svg>' + merkezHtml(Y, sec);
+  el.classList.toggle('ag-secim', !!sec);
+  el.classList.toggle('dar', Y.dar);
+  el.classList.toggle('sik', Y.sik);
 }
 
 export function gorunumAdCiz() {
@@ -100,11 +173,14 @@ export function gorunumAdCiz() {
 
 export function gorunumSec(g) {
   gorunum = g;
+  const ag = g === 'ag';
   document.querySelectorAll('.sekme[data-gorunum]').forEach(x => x.setAttribute('aria-selected', x.dataset.gorunum === g));
-  $('#kure').style.display = g === 'kure' ? 'block' : 'none';
-  $('#ag').style.display = g === 'ag' ? 'block' : 'none';
-  document.querySelectorAll('.k-sag-ust,.k-sag-alt').forEach(x => x.style.visibility = g === 'kure' ? 'visible' : 'hidden');
-  gorunumAdCiz(); agCiz();
+  $('#kure').style.display = ag ? 'none' : 'block';
+  $('#ag').style.display = ag ? 'block' : 'none';
+  document.querySelectorAll('.k-sag-ust,.k-sag-alt,.koor').forEach(x => x.style.visibility = ag ? 'hidden' : 'visible');
+  const kat = $('.katmanlar'); if (kat) kat.style.display = ag ? 'none' : '';
+  const hud = $('#hudSol'); if (hud) hud.textContent = t(ag ? 'yardimAg' : (D.haritaDurumu && D.haritaDurumu() ? 'haritaHata' : 'yardim'));
+  gorunumAdCiz(); agCiz(); D.hudSayCiz && D.hudSayCiz();
 }
 
 export function panellerBagla(deps) {
@@ -139,6 +215,8 @@ export function panellerBagla(deps) {
   });
 
   $('#ag').addEventListener('click', e => { const g = e.target.closest('.ag-dugum'); if (g) D.sec(g.dataset.id); });
+  let agBeklet = 0;
+  addEventListener('resize', () => { clearTimeout(agBeklet); agBeklet = setTimeout(agCiz, 140); });
   document.querySelectorAll('.sekme[data-gorunum]').forEach(b => b.onclick = () => gorunumSec(b.dataset.gorunum));
 
   Object.assign(D, { filtrele, tabloCiz, ciplerCiz, agCiz, gorunumAdCiz, gorunumSec, getGorunum: () => gorunum, kategoriListesi: () => KATEGORI });

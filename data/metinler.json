@@ -31,6 +31,30 @@
    "RED",
    "网络"
   ],
+  "agVarlik": [
+   "VARLIK",
+   "ENTITIES",
+   "ENTIDADES",
+   "实体"
+  ],
+  "agSektor": [
+   "SEKTÖR",
+   "SECTORS",
+   "SECTORES",
+   "行业"
+  ],
+  "agUlke": [
+   "ÜLKE",
+   "COUNTRIES",
+   "PAÍSES",
+   "国家"
+  ],
+  "agSecili": [
+   "SEÇİLİ",
+   "SELECTED",
+   "SELECCIONADA",
+   "已选"
+  ],
   "brifing": [
    "▶ BRİFİNG",
    "▶ BRIEFING",
@@ -223,11 +247,23 @@
    "CAPAS {k}/5 · ENTIDADES {v}",
    "图层 {k}/5 · 实体 {v}"
   ],
+  "hudSayAg": [
+   "VARLIK {v} · SEKTÖR {s}",
+   "ENTITIES {v} · SECTORS {s}",
+   "ENTIDADES {v} · SECTORES {s}",
+   "实体 {v} · 行业 {s}"
+  ],
   "yardim": [
    "SÜRÜKLE: DÖNDÜR · TEKER: YAKINLAŞ · /: ARA · ESC: BIRAK",
    "DRAG: ROTATE · WHEEL: ZOOM · /: SEARCH · ESC: RELEASE",
    "ARRASTRAR: GIRAR · RUEDA: ZOOM · /: BUSCAR · ESC: SOLTAR",
    "拖动：旋转 · 滚轮：缩放 · /：搜索 · ESC：取消"
+  ],
+  "yardimAg": [
+   "TIKLA: DOSYA · ÜZERİNE GEL: AD · ESC: BIRAK",
+   "CLICK: FILE · HOVER: NAME · ESC: RELEASE",
+   "CLIC: FICHA · PASA: NOMBRE · ESC: SOLTAR",
+   "点击：档案 · 悬停：名称 · ESC：取消"
   ],
   "merkez": [
    "MERKEZ",

@@ -56,7 +56,8 @@ function dilUygula() {
   document.querySelectorAll('.dil').forEach(b => b.setAttribute('aria-pressed', b.dataset.dil === dil));
   if (!D) return;
   const hud = $('#hudSol');
-  if (hud) hud.textContent = t(D.haritaDurumu && D.haritaDurumu() ? 'haritaHata' : 'yardim');
+  const ag = D.getGorunum && D.getGorunum() === 'ag';
+  if (hud) hud.textContent = ag ? t('yardimAg') : t(D.haritaDurumu && D.haritaDurumu() ? 'haritaHata' : 'yardim');
   D.katmanCiz && D.katmanCiz();
   D.ciplerCiz && D.ciplerCiz();
   D.gorunumAdCiz && D.gorunumAdCiz();

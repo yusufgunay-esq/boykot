@@ -145,7 +145,8 @@ export function onderCiz() {
   const ondEl = document.getElementById('onder');
   if (!ondEl) return;
   const secili = D.getSecili();
-  if (!secili || !document.getElementById('intel').firstElementChild || innerWidth < 1024) { if (ondEl.firstChild) ondEl.innerHTML = ''; return; }
+  const ag = D.getGorunum && D.getGorunum() === 'ag';
+  if (!secili || ag || !document.getElementById('intel').firstElementChild || innerWidth < 1024) { if (ondEl.firstChild) ondEl.innerHTML = ''; return; }
   const bag = (sec, lat, lng, hedef) => {
     const w = $(sec); if (!w || !D.kureProjeksiyon) return '';
     const pk = D.kureProjeksiyon(lat, lng); if (!pk) return '';

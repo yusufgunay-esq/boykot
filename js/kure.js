@@ -177,7 +177,7 @@ function hudGuncelle() {
   if (koorLEl.innerHTML !== kl) koorLEl.innerHTML = kl;
   if (koorREl.innerHTML !== kr) koorREl.innerHTML = kr;
   const secili = D.getSecili();
-  if (secili && K.merkez.visible) {
+  if (secili && K.merkez.visible && !(D.getGorunum && D.getGorunum() === 'ag')) {
     const m = isaretler.find(x => x.s.id === secili.id);
     if (m) {
       m.bas.getWorldPosition(dv); const arka = dv.clone().normalize().dot(kamera.position.clone().normalize()) < .15;
@@ -244,8 +244,10 @@ export function hudSayCiz() {
   const el = document.getElementById('katSay'); if (!el) return;
   const acik = Object.values(K).filter(g => g.visible).length;
   el.textContent = acik + '/' + KATMANLAR().length;
-  const h = document.getElementById('hudSay');
-  if (h) h.textContent = t('hudSay', { k: acik, v: D.filtrele ? D.filtrele().length : D.SIRKETLER.length });
+  const h = document.getElementById('hudSay'), v = D.filtrele ? D.filtrele().length : D.SIRKETLER.length;
+  if (h) h.textContent = D.getGorunum && D.getGorunum() === 'ag'
+    ? t('hudSayAg', { v, s: D.kategoriListesi ? D.kategoriListesi().length : '' })
+    : t('hudSay', { k: acik, v });
 }
 
 /* ================= DIŞA AÇILAN DURUM ================= */

@@ -3,6 +3,7 @@
    Kullanım:
      node araclar/ekran-cek.mjs --ad v06-koyu-genel
      node araclar/ekran-cek.mjs --ad v06-koyu-secili --sec
+     node araclar/ekran-cek.mjs --ad t5-ag --ag            (AĞ görünümü; --sec ile seçili)
      node araclar/ekran-cek.mjs --ad v06-brifing --brifing
      node araclar/ekran-cek.mjs --ad v06-mobil --genislik 390 --yukseklik 844
      node araclar/ekran-cek.mjs --ad v06-acilis --acilis --acilis-an 700
@@ -10,7 +11,8 @@
    Seçenekler: --site <html> (varsayılan tasarim/index.html), --cikis <dizin> (varsayılan _claude/kanit),
    --dil <tr|en|es|zh>, --playwright <modül yolu>, --bekle <ms>, --acilis (açılış perdesini kapatmadan çeker),
    --acilis-an <ms> (açılış karesinin zamanı), --yan-yana (tasarim/index.html + index.html birleşik),
-   --hareket-azalt (prefers-reduced-motion: reduce), --olcum (açılış animasyonu süresini ölç).
+   --hareket-azalt (prefers-reduced-motion: reduce), --olcum (açılış animasyonu süresini ölç),
+   --oge <seçici> (yalnız o öğeyi çek, örn. '#sahne'), --uzerine <seçici> (kareyi almadan öğenin üzerine gel).
    Çıktı JSON: her sayfa için konsol hatası ve yatay taşma. */
 import http from 'node:http';
 import fs from 'node:fs';
@@ -25,8 +27,10 @@ const cikis = path.resolve(kok, arg('cikis') || '_claude/kanit');
 const ad = arg('ad') || 'ekran';
 const genislik = +(arg('genislik') || 1440), yukseklik = +(arg('yukseklik') || 900);
 const dil = arg('dil');
+const oge = arg('oge');
+const uzerine = arg('uzerine');
 const bekle = +(arg('bekle') || 0);
-const sec = arg('sec', false), brifing = arg('brifing', false), acilisCek = arg('acilis', false);
+const sec = arg('sec', false), ag = arg('ag', false), brifing = arg('brifing', false), acilisCek = arg('acilis', false);
 const yanYana = arg('yan-yana', false);
 const acilisAn = arg('acilis-an');
 const azHareket = arg('hareket-azalt', false);
@@ -117,6 +121,10 @@ async function cek(hedef) {
         await sayfa.waitForFunction(() => { const n = document.querySelector('#neden'); return !n || !n.classList.contains('imlec'); }, null, { timeout: 15000 }).catch(() => {});
         await sayfa.waitForTimeout(500);
       }
+      if (ag) {
+        await sayfa.click('.sekme[data-gorunum="ag"]');
+        await sayfa.waitForTimeout(700);
+      }
       if (brifing) {
         await sayfa.click('#brifingAc');
         await sayfa.waitForTimeout(500);
@@ -127,9 +135,31 @@ async function cek(hedef) {
     }
     if (bekle) await sayfa.waitForTimeout(bekle);
 
+    let uzerineKutu = null;
+    if (uzerine) {
+      const u = await sayfa.$(uzerine);
+      if (!u) throw new Error('Üzerine gelinecek öğe yok: ' + uzerine);
+      await u.hover();
+      await sayfa.waitForTimeout(300);
+      uzerineKutu = await sayfa.evaluate(s => {
+        const e = document.querySelector(s); if (!e) return null;
+        const r = e.getBoundingClientRect();
+        return { x: r.x, y: r.y, width: r.width, height: r.height };
+      }, uzerine);
+    }
+
     const tasma = await sayfa.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - innerWidth);
     const dosya = path.join(cikis, (yanYana ? ad + '-' + hedef.ek : ad) + '.png');
-    await sayfa.screenshot({ path: dosya });
+    let ogeKutu = null;
+    if (oge) {
+      ogeKutu = await sayfa.evaluate(s => {
+        const e = document.querySelector(s); if (!e) return null;
+        const r = e.getBoundingClientRect();
+        return { x: r.x, y: r.y, width: r.width, height: r.height };
+      }, oge);
+      if (!ogeKutu) throw new Error('Öğe bulunamadı: ' + oge);
+      await sayfa.screenshot({ path: dosya, clip: ogeKutu });
+    } else await sayfa.screenshot({ path: dosya });
     /* Hareket azaltmada açılış perdesi statik mi: sınıf ve metin iki zamanda aynı olmalı. */
     let statik = null;
     if (azHareket && acilisCek) {
@@ -145,7 +175,7 @@ async function cek(hedef) {
       statik = a === b;
     }
     if (sureP) sure = await sureP;
-    return { etiket: hedef.etiket, site: hedef.site, ekran: dosya, genislik, yukseklik, yatayTasma: tasma, konsolHatasi: hatalar.length, hatalar, acilisMs: sure ? sure.ms : null, acilisGecikme: sure ? sure.gecikme : null, statik };
+    return { etiket: hedef.etiket, site: hedef.site, ekran: dosya, genislik, yukseklik, yatayTasma: tasma, konsolHatasi: hatalar.length, hatalar, acilisMs: sure ? sure.ms : null, acilisGecikme: sure ? sure.gecikme : null, statik, ogeKutu, uzerineKutu };
   } finally {
     await sayfa.close();
   }
