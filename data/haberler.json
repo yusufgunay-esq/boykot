@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-13T19:47:25.152Z",
+ "guncelleme": "2026-11-14T03:58:23.176Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -18,45 +18,24 @@
  "haberler": [
   {
    "sirketId": "microsoft",
-   "baslik": "No emails, no problem? Workers joke about Microsoft outage",
-   "url": "https://aljazeera.com/video/newsfeed/2026/11/13/no-emails-no-problem-workers-joke-about-microsoft-outage?traffic_source=rss",
+   "baslik": "Microsoft services begin recovering after global outage",
+   "url": "https://aljazeera.com/video/newsfeed/2026/11/14/microsoft-services-begin-recovering-after-global-outage?traffic_source=rss",
    "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-13T17:55:05.000Z"
+   "tarih": "2026-11-14T00:17:59.000Z"
   },
   {
-   "sirketId": "elbit",
-   "baslik": "Fergie Chambers tells Spanish court Gaza is 'moral question of our time'",
-   "url": "https://middleeasteye.net/news/fergie-chambers-tells-spanish-court-gaza-moral-question-our-time",
+   "sirketId": "boeing",
+   "baslik": "Activists demand end to transfer of military materials to Israel through New York's JFK Airport",
+   "url": "https://middleeasteye.net/news/activists-demand-end-transfer-military-materials-israel-through-new-yorks-jfk-airport",
    "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-13T17:43:14.000Z"
-  },
-  {
-   "sirketId": "shell",
-   "baslik": "Art against erasure: A Palestinian sculptor and a Lebanese painter on war, exile and memory",
-   "url": "https://middleeasteye.net/discover/art-against-erasure-palestinian-sculptor-lebanese-painter-war-exile-memory",
-   "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-13T15:42:23.000Z"
-  },
-  {
-   "sirketId": "google",
-   "baslik": "Senior Chabad rabbi condones killing Jewish politicians who work with Arabs",
-   "url": "https://middleeasteye.net/news/senior-chabad-rabbi-condones-killing-jewish-politicians-who-work-arabs",
-   "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-13T15:27:10.000Z"
-  },
-  {
-   "sirketId": "socar",
-   "baslik": "Greta Thunberg at COP: Turkish energy shipments 'directly fuelling the genocide of Palestine'",
-   "url": "https://middleeasteye.net/news/greta-thunberg-cop-turkish-energy-shipments-directly-fuelling-genocide-palestine",
-   "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-13T15:22:03.000Z"
+   "tarih": "2026-11-13T21:06:18.000Z"
   },
   {
    "sirketId": "microsoft",
-   "baslik": "You haven’t got mail: Global Microsoft outage disrupts services",
-   "url": "https://aljazeera.com/video/newsfeed/2026/11/13/13-11-sv-microsoft-global-outage?traffic_source=rss",
+   "baslik": "Microsoft says services still returning amid widespread outage",
+   "url": "https://aljazeera.com/news/2026/11/13/microsoft-says-services-still-returning-amid-widespread-outage?traffic_source=rss",
    "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-13T12:40:11.000Z"
+   "tarih": "2026-11-13T20:16:13.000Z"
   }
  ]
 }
