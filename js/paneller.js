@@ -174,6 +174,7 @@ export function gorunumAdCiz() {
 export function gorunumSec(g) {
   gorunum = g;
   const ag = g === 'ag';
+  document.body.classList.toggle('ag', ag);
   document.querySelectorAll('.sekme[data-gorunum]').forEach(x => x.setAttribute('aria-selected', x.dataset.gorunum === g));
   $('#kure').style.display = ag ? 'none' : 'block';
   $('#ag').style.display = ag ? 'block' : 'none';

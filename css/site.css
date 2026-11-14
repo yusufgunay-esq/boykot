@@ -441,6 +441,10 @@ body.dil-gel.secim .sag{opacity:0}
    8 px yukarı alındı ve pay 104 px'e çekildi; kart ile alt şerit arasında 12 px kalıyor. */
 .iw.a{left:calc(var(--sol) + 24px);top:64px;width:400px;max-height:calc(100% - var(--alt) - 100px)}
 .iw.b{right:24px;bottom:calc(var(--alt) + 40px);width:356px;max-height:calc(100% - var(--alt) - 160px)}
+/* AĞ'da dosya penceresi sağ sütuna çekilir: halkanın merkezini ve sol yayını örtmez.
+   Sağ panel seçimde zaten gizlenir; B penceresi halka görünümünde tekrar olduğu için kapanır. */
+body.ag .iw.a{left:auto;right:16px;top:64px;width:calc(var(--sag) - 32px);max-height:calc(100% - var(--alt) - 96px)}
+body.ag .iw.b{display:none}
 .iw-sinif{display:flex;justify-content:space-between;gap:8px;margin-bottom:5px;padding:3px 7px;border:1px solid var(--cizgi2);background:repeating-linear-gradient(-45deg,transparent 0 6px,color-mix(in srgb,var(--metin) 4%,transparent) 6px 7px),color-mix(in srgb,var(--zemin) 88%,transparent);font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--ikincil);text-transform:uppercase;white-space:nowrap;flex:none;overflow:hidden}
 .iw-sinif span:nth-child(2){color:var(--sonuk)}
 .plaka-s{display:flex;align-items:stretch;gap:8px;margin-bottom:6px;flex:none;min-width:0}

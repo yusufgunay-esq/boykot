@@ -63,7 +63,13 @@ jobs:
           script: |
             const fs = require('fs');
             const rapor = JSON.parse(fs.readFileSync('liste-raporu.json', 'utf8'));
+            const listeler = (rapor && rapor.listeler) || [];
+            const karsilastirilan = listeler.filter(l => !l.elle && l.supheli === false).length;
             if (!rapor || !rapor.fark) {
+              if (rapor && karsilastirilan === 0) {
+                core.info('Otomatik karşılaştırma yapılamadı (tüm kaynaklar şüpheli/elle); issue durumu değiştirilmedi.');
+                return;
+              }
               const { data: acik } = await github.rest.issues.listForRepo({
                 owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100
               });

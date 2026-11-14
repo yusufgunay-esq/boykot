@@ -103,8 +103,11 @@ function haritaKur() {
     for (const hat of tj.mesh(ulkeler, ulkeler.objects.countries).coordinates) {
       K.sinir.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(hat.map(([x, y]) => v3(y, x, R * 1.003))), sinirMat));
     }
-    $('#hudSol').textContent = t('yardim');
-  }).catch(() => { haritaHata = true; $('#hudSol').textContent = t('haritaHata'); });
+    if (!(D.getGorunum && D.getGorunum() === 'ag')) $('#hudSol').textContent = t('yardim');
+  }).catch(() => {
+    haritaHata = true;
+    if (!(D.getGorunum && D.getGorunum() === 'ag')) $('#hudSol').textContent = t('haritaHata');
+  });
 }
 
 /* ================= İŞARETLER VE YAYLAR ================= */

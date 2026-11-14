@@ -47,6 +47,25 @@ test('gezinme bölgeleri ve cümle satırları kayıt olmaz', () => {
   assert.deepEqual(a.kayitlar, ['Chevron', 'Intel', 'Siemens', 'HP', 'Microsoft']);
 });
 
+test('gerçek adlar korunur, cümle başlıkları elenir', () => {
+  const html = `<ul>
+    <li>Home Depot</li><li>Next plc</li><li>lululemon athletica inc</li>
+    <li>Chevron</li><li>Intel</li>
+    <li>What is BDS</li><li>Learn more about BDS</li>
+  </ul>`;
+  const a = listeAyristir(html);
+  assert.equal(a.supheli, false);
+  assert.deepEqual(a.kayitlar, ['Home Depot', 'Next plc', 'lululemon athletica inc', 'Chevron', 'Intel']);
+});
+
+test('satır numarası ad sayılmaz', () => {
+  const html = '<table>' + [['1.', 'Chevron'], ['2.', 'Intel'], ['3.', 'Siemens'], ['4.', 'HP'], ['5.', 'Microsoft']]
+    .map(([n, ad]) => `<tr><td>${n}</td><td>${ad}</td></tr>`).join('') + '</table>';
+  const a = listeAyristir(html);
+  assert.equal(a.supheli, false);
+  assert.deepEqual(a.kayitlar, ['Chevron', 'Intel', 'Siemens', 'HP', 'Microsoft']);
+});
+
 test('bot koruması fark üretmez', () => {
   const a = listeAyristir('<html><head><title>Just a moment...</title></head><body>challenges.cloudflare.com</body></html>');
   assert.equal(a.supheli, true);

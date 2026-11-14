@@ -7,8 +7,20 @@
 import { normal } from './metin.mjs';
 
 const KORUMA = /just a moment|challenges\.cloudflare\.com|cf-chl|attention required/i;
-const SAYI = /^\d+([.,]\d+)*$/;
-const YARDIM = /^(home|menu|search|login|log in|read more|share|next|previous|cookie|skip|you are here|contact us)\b/i;
+const SAYI = /^\d+([.,]\d+)*[.)]?$/;
+/* Yalnız tam eşleşen menü etiketleri elenir; "Home Depot", "Next plc" gibi adlar korunur. */
+const YARDIM = /^(home|menu|search|login|log in|read more|share|next|previous|cookie|skip|you are here|contact us)$/i;
+/* Cümle/gezinme fiiliyle başlayan satırlar ad değildir. */
+const NAV_FIIL = /^(learn|read|view|see|find|get|join|watch|listen|discover|explore|how|why|what|who)\b/i;
+const ISLEV = new Set(['the', 'of', 'and', 'is', 'are', 'was', 'were', 'to', 'for', 'in', 'on', 'with', 'by', 'from', 'that', 'this', 'these', 'those', 'a', 'an', 'or', 'as', 'at', 'it', 'its', 'be', 'been', 'has', 'have', 'had', 'will', 'can']);
+
+function cumleGibi(t) {
+  const k = t.toLowerCase().split(/\s+/);
+  if (k.length > 8) return true;
+  if (NAV_FIIL.test(t)) return true;
+  if (/^[a-z]/.test(t) && k.length >= 3 && k.some(x => ISLEV.has(x))) return true;
+  return false;
+}
 
 function metinlestir(html) {
   return String(html == null ? '' : html)
@@ -36,10 +48,7 @@ function aday(parca) {
 function gecerli(t) {
   if (t.length < 2 || t.length > 80) return false;
   if (SAYI.test(t) || YARDIM.test(t)) return false;
-  const kelime = t.split(/\s+/).length;
-  if (kelime > 8) return false;
-  if (/^[a-z]/.test(t) && kelime >= 3) return false;
-  return true;
+  return !cumleGibi(t);
 }
 
 /* Ham HTML'den liste satırlarını çıkarır. li içerikleri ve tablo satırları aday sayılır. */
