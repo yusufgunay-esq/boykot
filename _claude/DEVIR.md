@@ -1,5 +1,11 @@
 # Devir Notları
 
+## 2026-11-14 · AĞ yeniden tasarımı + liste dedektörü
+Yapıldı: AĞ görünümü sektör halkasına çevrildi — 18 kategori yayı, 243 varlık uç yayda durum sıralı, çakışmasız çevre etiketleri, seçim odağı, merkez plaka, dar/kompakt kip. Liste dedektörü yanlış farkı kesildi: BDS rehber sayfası elle:true, tabloda yalnız ad sütunu, gezinme/cümle satırları ayıklanır, bot koruması ayrı not; fark sıfırken workflow açık issue'yu kapatır.
+Doğrulama: npm test 85/85; canlı kök 200, js/ag.js 200, veri 243; AĞ ekran kanıtları `_claude/kanit/t5-ag-*.png`; canlı liste koşusu fark 0 (BDS elle, OHCHR bot korumalı, ülke elle).
+Sıradaki: OHCHR için bot korumasını aşan resmî indirme/API yolu ya da elle liste; bağımsız denetim (sef.mjs denetle) hâlâ koşulmadı.
+Commit: ad13826 (AĞ), e2c0577 (liste dedektörü).
+
 ## 2026-11-13 · İŞ 001 yayın
 Yapıldı: is001-site main'e fast-forward birleşti; GitHub Pages kaynağı Actions'a çevrildi; pages.yml yayını başarılı.
 Doğrulama: canlı kök 200, başlık Boykot · Küresel gözlem, js/ana.js 200, data 243 kayıt, yasal.html 200; npm test 75/75.
