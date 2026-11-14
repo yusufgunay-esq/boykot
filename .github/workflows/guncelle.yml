@@ -64,7 +64,22 @@ jobs:
             const fs = require('fs');
             const rapor = JSON.parse(fs.readFileSync('liste-raporu.json', 'utf8'));
             if (!rapor || !rapor.fark) {
-              core.info('Liste farkı yok; issue açılmadı.');
+              const { data: acik } = await github.rest.issues.listForRepo({
+                owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100
+              });
+              const eski = acik.find(i => i.title === 'Kaynak liste farkı');
+              if (eski) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner, repo: context.repo.repo, issue_number: eski.number,
+                  body: 'Yeni denetimde otomatik fark kalmadı. Elle denetim gerektiren kaynaklar raporda `elle: true` olarak işaretli. Issue kapatıldı.'
+                });
+                await github.rest.issues.update({
+                  owner: context.repo.owner, repo: context.repo.repo, issue_number: eski.number, state: 'closed'
+                });
+                core.info('Fark yok; issue kapatıldı: #' + eski.number);
+              } else {
+                core.info('Liste farkı yok; issue açılmadı.');
+              }
               return;
             }
             const satirlar = [];
