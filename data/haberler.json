@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-14T06:32:12.209Z",
+ "guncelleme": "2026-11-14T18:10:50.004Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -17,18 +17,25 @@
  ],
  "haberler": [
   {
-   "sirketId": "microsoft",
-   "baslik": "Microsoft services begin recovering after global outage",
-   "url": "https://aljazeera.com/video/newsfeed/2026/11/14/microsoft-services-begin-recovering-after-global-outage?traffic_source=rss",
+   "sirketId": "meta",
+   "baslik": "Italy fines Meta $880m over photo privacy",
+   "url": "https://aljazeera.com/news/2026/11/14/italy-fines-meta-880m-over-photo-privacy?traffic_source=rss",
    "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-14T00:17:59.000Z"
+   "tarih": "2026-11-14T16:16:15.000Z"
   },
   {
-   "sirketId": "boeing",
-   "baslik": "Activists demand end to transfer of military materials to Israel through New York's JFK Airport",
-   "url": "https://middleeasteye.net/news/activists-demand-end-transfer-military-materials-israel-through-new-yorks-jfk-airport",
+   "sirketId": "intel",
+   "baslik": "Three Israelis emerge as possible successors to Nvidia chief Jensen Huang, local media says",
+   "url": "https://middleeasteye.net/news/three-israelis-emerge-possible-successors-nvidia-chief-jensen-huang-local-media-says",
    "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-13T21:06:18.000Z"
+   "tarih": "2026-11-14T14:47:58.000Z"
+  },
+  {
+   "sirketId": "microsoft",
+   "baslik": "US air travel thrown into chaos as nationwide flights grounded over 'radar instability'",
+   "url": "https://middleeasteye.net/news/us-air-travel-thrown-chaos-nationwide-flights-grounded-over-radar-instability",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-14T11:27:49.000Z"
   }
  ]
 }
