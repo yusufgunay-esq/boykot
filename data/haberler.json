@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-15T06:41:09.282Z",
+ "guncelleme": "2026-11-15T18:54:54.241Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -15,5 +15,34 @@
    "url": "https://www.aljazeera.com/xml/rss/all.xml"
   }
  ],
- "haberler": []
+ "haberler": [
+  {
+   "sirketId": "toyota",
+   "baslik": "Exclusive: Toyota reviewing use of forklifts by Israeli military after MEE investigation",
+   "url": "https://middleeasteye.net/live-blog/live-blog-update/exclusive-toyota-reviewing-use-forklifts-israeli-military-after-mee",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-15T17:14:49.000Z"
+  },
+  {
+   "sirketId": "amazon",
+   "baslik": "Will Iraq’s oil smuggling crackdown disarm militias without a conflict?",
+   "url": "https://aljazeera.com/news/2026/11/15/will-iraqs-oil-smuggllng-crackdown-disarm-militias-without-a-conflict?traffic_source=rss",
+   "kaynakAd": "Al Jazeera",
+   "tarih": "2026-11-15T15:21:21.000Z"
+  },
+  {
+   "sirketId": "oracle",
+   "baslik": "‘Looking away was never a choice for me’: How Hollywood’s love affair with Israel turned sour",
+   "url": "https://middleeasteye.net/news/looking-away-never-a-choice-for-me-hollywoods-love-affair-israel-turned-sour",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-15T09:41:40.000Z"
+  },
+  {
+   "sirketId": "jpmorgan",
+   "baslik": "West Bank: Israeli settlers attack Palestinian home, olive harvesters",
+   "url": "https://middleeasteye.net/live-blog/live-blog-update/west-bank-israeli-settlers-attack-palestinian-home-olive-harvesters",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-15T07:08:46.000Z"
+  }
+ ]
 }
