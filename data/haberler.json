@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-16T06:38:03.465Z",
+ "guncelleme": "2026-11-16T22:10:59.775Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -17,32 +17,18 @@
  ],
  "haberler": [
   {
-   "sirketId": "amazon",
-   "baslik": "Pope condemns murders of Peru’s Indigenous leaders, deforestation of Amazon",
-   "url": "https://aljazeera.com/news/2026/11/16/pope-condemns-murders-of-perus-indigenous-leaders-deforestation-of-amazon?traffic_source=rss",
+   "sirketId": "bank-of-america",
+   "baslik": "Thousands report difficulties accessing accounts online at major US banks",
+   "url": "https://aljazeera.com/news/2026/11/16/thousands-report-difficulties-accessing-accounts-online-at-major-us-banks?traffic_source=rss",
    "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-16T01:52:12.000Z"
+   "tarih": "2026-11-16T19:18:10.000Z"
   },
   {
-   "sirketId": "amazon",
-   "baslik": "Pope urges end to Amazon deforestation",
-   "url": "https://aljazeera.com/video/newsfeed/2026/11/16/pope-urges-end-to-amazon-deforestation?traffic_source=rss",
-   "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-16T01:44:11.000Z"
-  },
-  {
-   "sirketId": "amazon",
-   "baslik": "Photos: Pope Leo visits Peru’s Amazon and Andean regions during 12-day tour",
-   "url": "https://aljazeera.com/gallery/2026/11/15/photos-pope-leo-visits-perus-amazon-and-andean-regions-during-12-day-tour?traffic_source=rss",
-   "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-15T20:54:13.000Z"
-  },
-  {
-   "sirketId": "toyota",
-   "baslik": "Exclusive: Toyota reviewing use of forklifts by Israeli military after MEE investigation",
-   "url": "https://middleeasteye.net/live-blog/live-blog-update/exclusive-toyota-reviewing-use-forklifts-israeli-military-after-mee",
+   "sirketId": "iai",
+   "baslik": "How Morocco is becoming Israel's security hub in Africa",
+   "url": "https://middleeasteye.net/opinion/how-morocco-becoming-israels-security-hub",
    "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-15T17:14:49.000Z"
+   "tarih": "2026-11-16T15:42:40.000Z"
   }
  ]
 }
