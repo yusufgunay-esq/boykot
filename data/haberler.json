@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-15T18:54:54.241Z",
+ "guncelleme": "2026-11-16T06:38:03.465Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -17,32 +17,32 @@
  ],
  "haberler": [
   {
+   "sirketId": "amazon",
+   "baslik": "Pope condemns murders of Peru’s Indigenous leaders, deforestation of Amazon",
+   "url": "https://aljazeera.com/news/2026/11/16/pope-condemns-murders-of-perus-indigenous-leaders-deforestation-of-amazon?traffic_source=rss",
+   "kaynakAd": "Al Jazeera",
+   "tarih": "2026-11-16T01:52:12.000Z"
+  },
+  {
+   "sirketId": "amazon",
+   "baslik": "Pope urges end to Amazon deforestation",
+   "url": "https://aljazeera.com/video/newsfeed/2026/11/16/pope-urges-end-to-amazon-deforestation?traffic_source=rss",
+   "kaynakAd": "Al Jazeera",
+   "tarih": "2026-11-16T01:44:11.000Z"
+  },
+  {
+   "sirketId": "amazon",
+   "baslik": "Photos: Pope Leo visits Peru’s Amazon and Andean regions during 12-day tour",
+   "url": "https://aljazeera.com/gallery/2026/11/15/photos-pope-leo-visits-perus-amazon-and-andean-regions-during-12-day-tour?traffic_source=rss",
+   "kaynakAd": "Al Jazeera",
+   "tarih": "2026-11-15T20:54:13.000Z"
+  },
+  {
    "sirketId": "toyota",
    "baslik": "Exclusive: Toyota reviewing use of forklifts by Israeli military after MEE investigation",
    "url": "https://middleeasteye.net/live-blog/live-blog-update/exclusive-toyota-reviewing-use-forklifts-israeli-military-after-mee",
    "kaynakAd": "Middle East Eye",
    "tarih": "2026-11-15T17:14:49.000Z"
-  },
-  {
-   "sirketId": "amazon",
-   "baslik": "Will Iraq’s oil smuggling crackdown disarm militias without a conflict?",
-   "url": "https://aljazeera.com/news/2026/11/15/will-iraqs-oil-smuggllng-crackdown-disarm-militias-without-a-conflict?traffic_source=rss",
-   "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-15T15:21:21.000Z"
-  },
-  {
-   "sirketId": "oracle",
-   "baslik": "‘Looking away was never a choice for me’: How Hollywood’s love affair with Israel turned sour",
-   "url": "https://middleeasteye.net/news/looking-away-never-a-choice-for-me-hollywoods-love-affair-israel-turned-sour",
-   "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-15T09:41:40.000Z"
-  },
-  {
-   "sirketId": "jpmorgan",
-   "baslik": "West Bank: Israeli settlers attack Palestinian home, olive harvesters",
-   "url": "https://middleeasteye.net/live-blog/live-blog-update/west-bank-israeli-settlers-attack-palestinian-home-olive-harvesters",
-   "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-15T07:08:46.000Z"
   }
  ]
 }
