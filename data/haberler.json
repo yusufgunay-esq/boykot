@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-16T22:10:59.775Z",
+ "guncelleme": "2026-11-17T07:59:45.538Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -17,18 +17,11 @@
  ],
  "haberler": [
   {
-   "sirketId": "bank-of-america",
-   "baslik": "Thousands report difficulties accessing accounts online at major US banks",
-   "url": "https://aljazeera.com/news/2026/11/16/thousands-report-difficulties-accessing-accounts-online-at-major-us-banks?traffic_source=rss",
+   "sirketId": "jpmorgan",
+   "baslik": "US bank outage: What caused Chase problems and Zelle payment delays?",
+   "url": "https://aljazeera.com/news/2026/11/17/us-bank-outage-what-caused-chase-problems-and-zelle-payment-delays?traffic_source=rss",
    "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-16T19:18:10.000Z"
-  },
-  {
-   "sirketId": "iai",
-   "baslik": "How Morocco is becoming Israel's security hub in Africa",
-   "url": "https://middleeasteye.net/opinion/how-morocco-becoming-israels-security-hub",
-   "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-16T15:42:40.000Z"
+   "tarih": "2026-11-17T05:19:34.000Z"
   }
  ]
 }
