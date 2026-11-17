@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-17T07:59:45.538Z",
+ "guncelleme": "2026-11-17T20:59:34.535Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -17,11 +17,18 @@
  ],
  "haberler": [
   {
-   "sirketId": "jpmorgan",
-   "baslik": "US bank outage: What caused Chase problems and Zelle payment delays?",
-   "url": "https://aljazeera.com/news/2026/11/17/us-bank-outage-what-caused-chase-problems-and-zelle-payment-delays?traffic_source=rss",
-   "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-17T05:19:34.000Z"
+   "sirketId": "meta",
+   "baslik": "'Expert researcher'? How 'Habibi' account smeared UK Muslims and attacked Ed Miliband as 'Palestine Secretary'",
+   "url": "https://middleeasteye.net/news/expert-researcher-how-habibi-account-smeared-british-muslims-and-attacked-ed-miliband",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-17T16:33:03.000Z"
+  },
+  {
+   "sirketId": "meta",
+   "baslik": "France elections: Why Marine Le Pen needs Israel",
+   "url": "https://middleeasteye.net/opinion/france-elections-why-marine-le-pen-needs-israel",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-17T16:12:39.000Z"
   }
  ]
 }
