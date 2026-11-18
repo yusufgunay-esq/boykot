@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-18T07:35:50.849Z",
+ "guncelleme": "2026-11-18T20:37:49.592Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -17,18 +17,18 @@
  ],
  "haberler": [
   {
-   "sirketId": "amazon",
-   "baslik": "Rare video of Brazilian Amazon tribe",
-   "url": "https://aljazeera.com/video/newsfeed/2026/11/18/rare-video-of-brazilian-amazon-tribe?traffic_source=rss",
-   "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-18T05:14:07.000Z"
+   "sirketId": "microsoft",
+   "baslik": "Tim Hortons app sending user data to Israeli cybertech company, advocacy group confirms",
+   "url": "https://middleeasteye.net/news/tim-hortons-app-sending-user-data-israeli-cybertech-company-advocacy-group-confirms",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-18T18:29:06.000Z"
   },
   {
-   "sirketId": "amazon",
-   "baslik": "Rare images of Indigenous group in Amazon highlight threats, advocates say",
-   "url": "https://aljazeera.com/news/2026/11/18/rare-images-of-indigenous-group-in-amazon-highlight-threats-advocates-say?traffic_source=rss",
-   "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-18T02:36:09.000Z"
+   "sirketId": "google",
+   "baslik": "What leverage does the UAE have over permanent UN Security Council members?",
+   "url": "https://middleeasteye.net/news/heres-leverage-uae-has-over-5-permanent-members-un-security-council-veto-power",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-18T16:15:19.000Z"
   }
  ]
 }
