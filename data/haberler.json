@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-18T20:37:49.592Z",
+ "guncelleme": "2026-11-19T07:32:01.837Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -17,18 +17,11 @@
  ],
  "haberler": [
   {
-   "sirketId": "microsoft",
-   "baslik": "Tim Hortons app sending user data to Israeli cybertech company, advocacy group confirms",
-   "url": "https://middleeasteye.net/news/tim-hortons-app-sending-user-data-israeli-cybertech-company-advocacy-group-confirms",
-   "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-18T18:29:06.000Z"
-  },
-  {
    "sirketId": "google",
-   "baslik": "What leverage does the UAE have over permanent UN Security Council members?",
-   "url": "https://middleeasteye.net/news/heres-leverage-uae-has-over-5-permanent-members-un-security-council-veto-power",
-   "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-18T16:15:19.000Z"
+   "baslik": "Google’s driverless car hits a roadblock",
+   "url": "https://aljazeera.com/video/newsfeed/2026/11/19/googles-driverless-car-hits-a-roadblock?traffic_source=rss",
+   "kaynakAd": "Al Jazeera",
+   "tarih": "2026-11-19T02:57:56.000Z"
   }
  ]
 }
