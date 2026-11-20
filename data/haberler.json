@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-20T07:23:04.993Z",
+ "guncelleme": "2026-11-20T20:26:36.283Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -17,11 +17,18 @@
  ],
  "haberler": [
   {
-   "sirketId": "meta",
-   "baslik": "Meta rethinks 2030 climate goals as AI data centres drive emissions up",
-   "url": "https://aljazeera.com/news/2026/11/20/meta-rethinks-2030-climate-goals-as-ai-data-centres-drive-emissions-up?traffic_source=rss",
+   "sirketId": "amazon",
+   "baslik": "Iraq security forces deploy in Kataeb Hezbollah stronghold following 'compromise' deal",
+   "url": "https://middleeasteye.net/news/iraq-security-forces-deploy-kataeb-hezbollah-stronghold-following-compromise-deal",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-20T15:52:23.000Z"
+  },
+  {
+   "sirketId": "amazon",
+   "baslik": "Blood Gold: The Munduruku’s fight for survival in the Brazilian Amazon",
+   "url": "https://aljazeera.com/video/fault-lines/2026/11/20/blood-gold-the-mundurukus-fight-for-survival-in-the-brazilian-amazon?traffic_source=rss",
    "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-20T01:29:28.000Z"
+   "tarih": "2026-11-20T15:00:00.000Z"
   }
  ]
 }
