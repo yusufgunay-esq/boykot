@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-21T07:16:30.067Z",
+ "guncelleme": "2026-11-21T19:21:33.610Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -15,5 +15,27 @@
    "url": "https://www.aljazeera.com/xml/rss/all.xml"
   }
  ],
- "haberler": []
+ "haberler": [
+  {
+   "sirketId": "microsoft",
+   "baslik": "After outages hit US banks and aviation, FBI database reported hacked",
+   "url": "https://middleeasteye.net/news/after-outages-hit-us-banks-and-aviation-fbi-database-reported-hacked",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-21T16:23:26.000Z"
+  },
+  {
+   "sirketId": "meta",
+   "baslik": "India’s opposition stages protests against Meta over account removals",
+   "url": "https://aljazeera.com/news/2026/11/21/indias-opposition-stages-protests-against-meta-over-account-removals?traffic_source=rss",
+   "kaynakAd": "Al Jazeera",
+   "tarih": "2026-11-21T16:14:01.000Z"
+  },
+  {
+   "sirketId": "caf",
+   "baslik": "Diallo present as Africa’s Motsepe reiterates support for FIFA’s Infantino",
+   "url": "https://aljazeera.com/sports/2026/11/21/diallo-present-as-africa-football-boss-motsepe-reiterates-infantino-support?traffic_source=rss",
+   "kaynakAd": "Al Jazeera",
+   "tarih": "2026-11-21T15:20:43.000Z"
+  }
+ ]
 }
