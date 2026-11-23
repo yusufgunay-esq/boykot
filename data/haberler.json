@@ -1,11 +1,7 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-23T07:46:34.570Z",
+ "guncelleme": "2026-11-23T23:58:11.984Z",
  "kaynaklar": [
-  {
-   "ad": "GDELT DOC 2.0",
-   "url": "https://api.gdeltproject.org/"
-  },
   {
    "ad": "BDS Movement",
    "url": "https://bdsmovement.net/rss.xml"
@@ -19,5 +15,13 @@
    "url": "https://www.aljazeera.com/xml/rss/all.xml"
   }
  ],
- "haberler": []
+ "haberler": [
+  {
+   "sirketId": "orange",
+   "baslik": "Israeli contestant with 'peace' costume booed at Miss Universe 2026",
+   "url": "https://middleeasteye.net/trending/miss-universe-2026-israeli-contestant-booed-genocide-gaza-wars",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-23T17:34:17.000Z"
+  }
+ ]
 }
