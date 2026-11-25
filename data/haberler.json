@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-25T08:42:19.880Z",
+ "guncelleme": "2026-11-25T21:45:34.638Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -17,11 +17,18 @@
  ],
  "haberler": [
   {
-   "sirketId": "google",
-   "baslik": "Iran whips singer Parastoo Ahmadi 74 times over YouTube concert",
-   "url": "https://aljazeera.com/video/newsfeed/2026/11/25/iran-whips-singer-parastoo-ahmadi-74-times-over-youtube-concert?traffic_source=rss",
+   "sirketId": "amazon",
+   "baslik": "Elderly man with Alzheimer’s rescued after 11 days in Amazon jungle",
+   "url": "https://aljazeera.com/video/newsfeed/2026/11/25/aje-onl-nf_man-with-alzheimers-rescued-after-11-days-in-amazon-251126?traffic_source=rss",
    "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-25T01:21:02.000Z"
+   "tarih": "2026-11-25T19:57:08.000Z"
+  },
+  {
+   "sirketId": "elbit",
+   "baslik": "Jeremy Corbyn and Rashida Tlaib join politicians and legal groups condemning Ulm 5 prosecution",
+   "url": "https://middleeasteye.net/live-blog/live-blog-update/jeremy-corbyn-and-rashida-tlaib-join-politicians-and-legal-groups",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-25T16:30:29.000Z"
   }
  ]
 }
