@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-26T08:27:08.519Z",
+ "guncelleme": "2026-11-26T21:38:40.136Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -15,5 +15,27 @@
    "url": "https://www.aljazeera.com/xml/rss/all.xml"
   }
  ],
- "haberler": []
+ "haberler": [
+  {
+   "sirketId": "amazon",
+   "baslik": "Socialist weather and dogs barking in Hebrew: America's Thanksgiving culture wars",
+   "url": "https://middleeasteye.net/trending/socialist-weather-and-dogs%20barking-hebrew-americas-thanksgiving-culture-wars",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-26T20:21:44.000Z"
+  },
+  {
+   "sirketId": "rheinmetall",
+   "baslik": "Meloni expresses 'deepest sorrow' for deaths of Italian nationals in Iranian attack on Kuwait",
+   "url": "https://middleeasteye.net/live-blog/live-blog-update/meloni-expresses-deepest-sorrow-deaths-italian-nationals-kuwait",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-26T14:47:15.000Z"
+  },
+  {
+   "sirketId": "rheinmetall",
+   "baslik": "Kuwait says two killed from intercepted Iranian drone shrapnel",
+   "url": "https://middleeasteye.net/live-blog/live-blog-update/kuwait-says-two-killed-intercepted-iranian-drone-shrapnel",
+   "kaynakAd": "Middle East Eye",
+   "tarih": "2026-11-26T14:36:18.000Z"
+  }
+ ]
 }
