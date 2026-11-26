@@ -1,6 +1,6 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-25T21:45:34.638Z",
+ "guncelleme": "2026-11-26T08:27:08.519Z",
  "kaynaklar": [
   {
    "ad": "BDS Movement",
@@ -15,20 +15,5 @@
    "url": "https://www.aljazeera.com/xml/rss/all.xml"
   }
  ],
- "haberler": [
-  {
-   "sirketId": "amazon",
-   "baslik": "Elderly man with Alzheimer’s rescued after 11 days in Amazon jungle",
-   "url": "https://aljazeera.com/video/newsfeed/2026/11/25/aje-onl-nf_man-with-alzheimers-rescued-after-11-days-in-amazon-251126?traffic_source=rss",
-   "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-25T19:57:08.000Z"
-  },
-  {
-   "sirketId": "elbit",
-   "baslik": "Jeremy Corbyn and Rashida Tlaib join politicians and legal groups condemning Ulm 5 prosecution",
-   "url": "https://middleeasteye.net/live-blog/live-blog-update/jeremy-corbyn-and-rashida-tlaib-join-politicians-and-legal-groups",
-   "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-25T16:30:29.000Z"
-  }
- ]
+ "haberler": []
 }
