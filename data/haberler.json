@@ -1,11 +1,7 @@
 {
  "surum": 1,
- "guncelleme": "2026-11-27T21:22:51.791Z",
+ "guncelleme": "2026-11-28T07:55:40.182Z",
  "kaynaklar": [
-  {
-   "ad": "GDELT DOC 2.0",
-   "url": "https://api.gdeltproject.org/"
-  },
   {
    "ad": "BDS Movement",
    "url": "https://bdsmovement.net/rss.xml"
@@ -21,25 +17,11 @@
  ],
  "haberler": [
   {
-   "sirketId": "wellington",
-   "baslik": "Why India’s captain wants saliva back in cricket",
-   "url": "https://aljazeera.com/video/newsfeed/2026/11/27/why-indias-captain-wants-saliva-back-in-cricket?traffic_source=rss",
-   "kaynakAd": "Al Jazeera",
-   "tarih": "2026-11-27T17:39:57.000Z"
-  },
-  {
-   "sirketId": "meta",
-   "baslik": "Evictions and erasure: How Palestinian life in East Jerusalem is being extinguished",
-   "url": "https://middleeasteye.net/big-story/evictions-and-erasure-how-palestinian-life-east-jerusalem-being-extinguished",
+   "sirketId": "bright-dairy",
+   "baslik": "Denied entry, Francesca Albanese to leave Costa Rica after second night at airport",
+   "url": "https://middleeasteye.net/live-blog/live-blog-update/denied-entry-francesca-albanese-leave-costa-rica-after-second-night",
    "kaynakAd": "Middle East Eye",
-   "tarih": "2026-11-27T14:30:30.000Z"
-  },
-  {
-   "sirketId": "intel",
-   "baslik": "Intel Agencies Pushed USAID To Partner With Censorship NGO That Targeted Daily Caller , Other Conservative And Independent Outlets",
-   "url": "https://dailycaller.com/2026/11/26/usaid-censorship-ngo-targeted-conservative-outlets",
-   "kaynakAd": "dailycaller.com",
-   "tarih": "2026-11-27T00:30:00.000Z"
+   "tarih": "2026-11-28T01:53:35.000Z"
   }
  ]
 }
